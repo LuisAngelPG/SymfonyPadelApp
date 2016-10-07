@@ -54,6 +54,7 @@ class TournamentController extends Controller {
         	$playersParticipants = $form->get('players')->getData();
         	$em = $this->getDoctrine()->getManager();
         	$em->persist($tournament);
+            dump($playersParticipants);die();
         	foreach ($playersParticipants as $player) {
                 $class = get_class($player["player"]);
                 if ($class == "AppBundle\Entity\UserProfilePlayerprofile") {
@@ -96,11 +97,15 @@ class TournamentController extends Controller {
         $dummysId = $repositoryParticipantDummys->findByTournament($tournament);
         $players = array();
         $dummys = array();
-        foreach ($playersId as $player) {
+        if ($playersId != null) {
+            foreach ($playersId as $player) {
             array_push($players, $repositoryPlayer->findOneById(($player->getPlayer()->getId())));
+            }
         }
-        foreach ($dummysId as $player) {
+        if ($dummysId != null) {
+            foreach ($dummysId as $player) {
             array_push($dummys, $repositoryDummys->findOneById(($player->getPlayer()->getId())));
+            }    
         }
         return $this->render('tournament/viewTournament.html.twig', array('tournament' => $tournament, 'players' => $players, 'dummys' => $dummys));
     }

@@ -4,7 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Form\UserType;
 use AppBundle\Form\LoginType;
-use AppBundle\Entity\AppUser;
+use AppBundle\Entity\facebookprofile;
 use AppBundle\Entity\Club;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -35,6 +35,9 @@ class WebController extends Controller {
      * @Route("/web/matches", name="matches")
      */
     public function matches(Request $request) {
+        $repo = $this->getDoctrine()->getRepository('AppBundle:UserProfileFacebookprofile');
+        $facebookprofile = $repo->findOneById('133');
+        dump($facebookprofile);die();
         return $this->render('web/matches.html.twig');
     }
 
