@@ -1,0 +1,344 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
+
+
+/**
+ * AppUser
+ *
+ * @ORM\Table(name="app_user")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\AppUserRepository")
+ */
+class AppUser implements UserInterface, \Serializable
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="username", type="string", length=255)
+     */
+    private $username;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255, unique=true)
+     */
+    private $email;
+
+    /**
+     * @Assert\Length(max=4096)
+     */
+    private $plainPassword;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=64)
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="string", length=255, nullable=true)
+     */
+    private $phone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="age", type="string", length=255, nullable=true)
+     */
+    private $age;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nationality", type="string", length=3, nullable=true)
+     */
+    private $nationality;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Equipment", inversedBy="players")
+     * @ORM\JoinColumn(name="Equipment_id", referencedColumnName="id")
+     */
+    private $equipment;
+
+    /**
+     * @var boolean $active
+     * @ORM\Column(name="manager", type="boolean", nullable=false)
+     */
+    private $manager;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     *
+     * @return AppUser
+     */
+    public function setUsername($username) {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Get username
+     *
+     * @return string
+     */
+    public function getUsername() {
+        return $this->username;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return AppUser
+     */
+    public function setEmail($email) {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail() {
+        return $this->email;
+    }
+
+    /**
+     * Set plainPassword
+     *
+     * @param string $plainPassword
+     *
+     * @return AppUser
+     */
+    public function setPlainPassword($plainPassword) {
+        $this->plainPassword = $plainPassword;
+
+        return $this;
+    }
+
+    /**
+     * Get plainPassword
+     *
+     * @return string
+     */
+    public function getPlainPassword() {
+        return $this->plainPassword;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     *
+     * @return AppUser
+     */
+    public function setPassword($password) {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string
+     */
+    public function getPassword() {
+        return $this->password;
+    }
+
+     public function getSalt() {
+        return null;
+    }
+
+    public function getRoles() {
+        return array('ROLE_USER');
+    }
+
+    public function eraseCredentials() {
+        
+    }
+
+      /** @see \Serializable::serialize() */
+    public function serialize() {
+        return serialize(array(
+            $this->id,
+            $this->username,
+            $this->password,
+        ));
+    }
+
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized) {
+        list (
+            $this->id,
+            $this->username,
+            $this->password,
+        ) = unserialize($serialized);
+    }
+
+    /**
+     * Set club
+     *
+     * @param \AppBundle\Entity\Club $club
+     *
+     * @return AppUser
+     */
+    public function setClub(\AppBundle\Entity\Club $club = null)
+    {
+        $this->club = $club;
+
+        return $this;
+    }
+
+    /**
+     * Get club
+     *
+     * @return \AppBundle\Entity\Club
+     */
+    public function getClub()
+    {
+        return $this->club;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName() {
+        return $this->username;
+    }
+
+
+    /**
+     * Set phone
+     *
+     * @param string $phone
+     *
+     * @return AppUser
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Set age
+     *
+     * @param string $age
+     *
+     * @return AppUser
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
+
+        return $this;
+    }
+
+    /**
+     * Get age
+     *
+     * @return string
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    /**
+     * Set nationality
+     *
+     * @param string $nationality
+     *
+     * @return AppUser
+     */
+    public function setNationality($nationality)
+    {
+        $this->nationality = $nationality;
+
+        return $this;
+    }
+
+    /**
+     * Get nationality
+     *
+     * @return string
+     */
+    public function getNationality()
+    {
+        return $this->nationality;
+    }
+
+    /**
+     * Set equipment
+     *
+     * @param \AppBundle\Entity\Equipment $equipment
+     *
+     * @return AppUser
+     */
+    public function setEquipment(\AppBundle\Entity\Equipment $equipment = null)
+    {
+        $this->equipment = $equipment;
+
+        return $this;
+    }
+
+    /**
+     * Get equipment
+     *
+     * @return \AppBundle\Entity\Equipment
+     */
+    public function getEquipment()
+    {
+        return $this->equipment;
+    }
+}

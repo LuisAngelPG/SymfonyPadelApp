@@ -1,0 +1,85 @@
+{% extends 'base/base.html.twig' %}
+{% set active = 3 %}
+{% block javascripts %}
+	{{ parent() }}
+    <script src="{{ asset('bundles/web/js/libs/jqueryUI/jquery-ui.min.js') }}" type="text/javascript"></script>
+  	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<script src="{{ asset('bundles/web/js/libs/tablesorter/jquery.tablesorter.min.js') }}" type="text/javascript"></script>
+  	<script>
+  		$("#myTable").tablesorter();
+  	</script>
+  	<script>
+		$( function() {
+			var clubNames = [];
+			{% for club in allClubs %}
+				clubNames.push({
+				'id': '{{club.id}}',
+				'value': '{{club.name}}',
+				'image': {% if club.image %}
+							"{{ asset('bundles/web/img/clubs/' ~ club.image) }}"
+						 {% else %}
+						 	"{{ asset('bundles/web/img/clubs/default.jpg') }}"
+						 {% endif %}
+				});
+			{% endfor %}
+
+		    $( "#search" ).autocomplete({
+		    	source: function(request, response) {
+	        		var results = $.ui.autocomplete.filter(clubNames, request.term);
+	       			response(results.slice(0, 5));
+	    		},
+	    		select: function( event, ui ) {
+					window.location.href = "{{ path('viewClub') }}/" + ui.item.id; 
+	    		}
+		    }).autocomplete( "instance" )._renderItem = function( ul, item ) {
+	      		return $("<li>")
+	        	.append("<div class='row'><div class='pull-left list-photo'><img src=" + item.image + " /></div> <div>" + item.label + "</div></div>")
+	        	.appendTo(ul);
+	   		};	    
+	  	} );
+  	</script>
+{% endblock %}
+{% block body %}
+{% set profile = app.session.get('profile') %}
+<div class="container rounded-box">
+	<form class="" method="get" action="{{ path('searchClub') }}">
+	    <div class="form-group">
+	        <input id="search" class="form-control" type="text" placeholder="{% trans %}Search...{% endtrans %}" name ="search">
+	    </div>
+	    <button class="hidden" type="submit" value"search" class="btn btn-default"></button>
+	</form>
+	<table id="myTable" class="tablesorter"> 
+		<thead> 
+			<tr> 
+			    <th id="photo"></th> 
+			    <th>{% trans %}Name{% endtrans %}</th> 
+			    <th>{% trans %}Address{% endtrans %}</th> 
+			    <th>{% trans %}Email{% endtrans %}</th> 
+			    <th id="phone">{% trans %}Phone{% endtrans %}</th> 
+			    <th>Web</th>
+			</tr> 
+		</thead> 
+
+		<tbody> 
+			{% for club in favClubs %}
+				<tr>
+					<td><a href="{{ path("viewClub", {"clubId": club.id}) }}">
+						<img class="club-photo-list" src=
+							{% if club.image %}
+								"{{ asset('bundles/web/img/clubs/' ~ club.image) }}"
+							 {% else %}
+						 		"{{ asset('bundles/web/img/clubs/default.jpg') }}"
+							 {% endif %}
+						/>
+					</a></td>
+					<td><a href="{{ path("viewClub", {"clubId": club.id}) }}">{{club.name}}</a></td>
+					<td>{{club.address}}</td>
+					<td>{{club.email}}</td>
+					<td><div id="phoneNumber">{{club.phoneNumber}}</div></td>
+					<td>{{club.url}}</td>
+				</tr>	
+			{% endfor %}
+		</tbody> 
+	</table> 
+</div>
+{% endblock %}

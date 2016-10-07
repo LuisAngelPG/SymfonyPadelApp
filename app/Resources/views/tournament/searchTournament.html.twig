@@ -1,0 +1,70 @@
+{% extends 'base/base.html.twig' %}
+{% set active = 2 %}
+{% block javascripts %}
+	{{ parent() }}
+    <script src="{{ asset('bundles/web/js/libs/jqueryUI/jquery-ui.min.js') }}" type="text/javascript"></script>
+  	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<script src="{{ asset('bundles/web/js/libs/tablesorter/jquery.tablesorter.min.js') }}" type="text/javascript"></script>
+  	<script>
+  		$("#myTable").tablesorter();
+  	</script>
+  	<script>
+		$( function() {
+			var tournamentNames = [];
+			{% for tournaments in allTournaments %}
+				{% for tournament in tournaments %}
+					tournamentNames.push({
+						'id': '{{tournament.id}}',
+						'value': '{{tournament.tournament.name}}'
+						});
+				{% endfor %}
+			{% endfor %}
+
+		    $( "#search" ).autocomplete({
+		    	source: function(request, response) {
+	        		var results = $.ui.autocomplete.filter(tournamentNames, request.term);
+	       			response(results.slice(0, 5));
+	    		},
+	    		select: function( event, ui ) {
+					window.location.href = "{{ path('viewPlayer') }}/" + ui.item.id; 
+	    		}
+		    }).autocomplete( "instance" )._renderItem = function( ul, item ) {
+	      		return $("<li>")
+	        	.append("<div class='row'><div>" + item.label + "</div></div>")
+	        	.appendTo(ul);
+	   		};	    
+	  	} );
+  	</script>
+{% endblock %}
+{% block body %}
+{% set profile = app.session.get('profile') %}
+
+<div class="container rounded-box">
+	<form class="" method="get" action="{{ path('searchClub') }}">
+	    <div class="form-group">
+	        <input id="search" class="form-control" type="text" placeholder="{% trans %}Search...{% endtrans %}" name ="search">
+	    </div>
+	    <button class="hidden" type="submit" value"search" class="btn btn-default"></button>
+	</form>
+	<table id="myTable" class="tablesorter"> 
+		<tbody> 
+			<tr>
+				<td>Player</td>
+			</tr>
+			{% for tournament in allTournaments.0 %}
+				<tr>
+					<td><a href="{{ path("viewTournament", {"tournamentId": tournament.tournament.id}) }}">{{tournament.tournament.name}}</a></td>
+				</tr>	
+			{% endfor %}
+			<tr>
+				<td>Spectator</td>
+			</tr>
+			{% for tournament in allTournaments.1 %}
+				<tr>
+					<td><a href="{{ path("viewTournament", {"tournamentId": tournament.tournament.id}) }}">{{tournament.tournament.name}}</a></td>
+				</tr>	
+			{% endfor %}
+		</tbody> 
+	</table> 
+</div>
+{% endblock %}

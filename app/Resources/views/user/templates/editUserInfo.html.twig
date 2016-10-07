@@ -1,0 +1,101 @@
+{% set profile = app.session.get('profile') %}
+
+{{form_start(form, {'action': path('ajaxEdit')})}}
+	<div class="row">
+		<div class="col-md-offset-4 col-md-4">
+			<div class="form-group input-group-md">
+				{{form_widget(form.image)}}
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Username{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.user.username)}}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Name{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.name)}}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Email{%endtrans%}
+		</div>
+		<div class="col-md-3  form-group input-group-md">
+			{{ form_widget(form.user.email) }}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Phone{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.phoneNumber)}}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Age{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.age)}}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Country{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.nationality)}}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Equipment{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.equipment)}}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Gender{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.gender)}}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Level{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.level)}}
+		</div>
+	</div>
+
+	<div class="row user-info">
+		<div class="col-md-3 col-md-offset-5">
+			<div class="btn-group btn-block">
+				<button type="submit" class="btn btn-success">{% trans %}Save{% endtrans %}</button>
+				<button type="button" class="btn btn-danger" id="cancel_button">{% trans %}Cancel{% endtrans %}</button>
+			</div>
+		</div>
+	</div>
+{{form_end(form)}}

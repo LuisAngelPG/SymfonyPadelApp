@@ -1,0 +1,63 @@
+{% extends 'base/base.html.twig' %}
+{% set active = -1 %}
+{% block navbar %} 
+    {% include 'base/navbar.html.twig' %}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/web/js/libs/formValidator/form-validator/jquery.form-validator.min.js') }}"></script>
+    <script>
+        $.validate({
+            lang: '{{ app.request.locale }}',
+        	modules : 'security'
+        });
+    </script>
+{% endblock %}
+{% block body %}
+	<div class="container fill-height">
+		<div class="row valign">
+	        <div class="col-md-4 col-md-offset-4">
+			   	{{ form_start(form, { 'attr': {'class': 'login-register-form jumbotron', 'id': 'jumbo' } }) }}
+		            <div class="form-group">
+		            	<div class="input-group">
+		            	    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							{{ form_row(form.user.username, { 'attr': {'class': 'form-control', 'placeholder': 'Enter your username'|trans, 'data-validation': 'required alphanumeric'}}) }}    
+						</div>            
+					</div>
+				    
+		            <div class="form-group">
+		            	<div class="input-group">
+		               	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+				    		{{ form_row(form.user.email, { 'attr': {'class': 'form-control', 'placeholder': 'Enter your e-mail', 'data-validation': 'required email'}}) }}
+				    	</div>
+		            </div>
+
+				    <div class="form-group">
+				    	<div class="input-group">
+		                	<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+				   			{{ form_row(form.user.password.first, { 'attr': {'class': 'form-control', 'placeholder': 'Enter your password'|trans, 'data-validation': 'required', 'name': 'password'}}) }}
+				   		</div>
+		            </div>
+
+				    <div class="form-group">
+				    	<div class="input-group">
+		                	<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+				    		{{ form_row(form.user.password.second, { 'attr': {'class': 'form-control', 'placeholder': 'Repeat your password'|trans, 'data-validation': 'required confirmation', 'data-validation-confirm': 'trainer[user][password][first]'}}) }}
+				    	</div>
+		            </div>
+		            <!--
+				   	<div class="form-group checkbox input-group">
+				    	{{ form_widget(form.isTrainer, { 'attr': {'class': 'login-checkbox' }}) }}
+				    	{% trans %}Are you a trainer?{% endtrans %}
+		            </div>
+		            -->
+		            <div class="btn-group btn-block">
+					   	<button class="btn btn-50 btn-lg btn-primary" type="submit">{% trans %}Register{% endtrans %}</button>
+		            	<a href="{{path('login')}}" class="btn btn-50 btn-lg btn-info">{% trans %}Login{% endtrans %}</a>
+		            </div>
+
+	            {{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}

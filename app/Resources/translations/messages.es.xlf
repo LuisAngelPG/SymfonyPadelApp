@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <!-- Navbar -->
+            <trans-unit id="home">
+                <source>Home</source>
+                <target>Inicio</target>
+            </trans-unit>
+            <trans-unit id="matches">
+                <source>Matches</source>
+                <target>Partidos</target>
+            </trans-unit>
+            <trans-unit id="tournaments">
+                <source>Tournaments</source>
+                <target>Torneos</target>
+            </trans-unit>
+            <trans-unit id="clubs">
+                <source>Clubs</source>
+                <target>Clubs</target>
+            </trans-unit>
+            <trans-unit id="addClub">
+                <source>Add Club</source>
+                <target>Añadir Club</target>
+            </trans-unit>
+            <trans-unit id="viewClus">
+                <source>View Clubs</source>
+                <target>Ver Clubs</target>
+            </trans-unit>
+            <trans-unit id="players">
+                <source>Players</source>
+                <target>Jugadores</target>
+            </trans-unit>
+            <trans-unit id="search">
+                <source>Search...</source>
+                <target>Buscar...</target>
+            </trans-unit>
+            <trans-unit id="language">
+                <source>Language</source>
+                <target>Idioma</target>
+            </trans-unit>
+            <trans-unit id="settings">
+                <source>Settings</source>
+                <target>Configuración</target>
+            </trans-unit>
+            <trans-unit id="clubSettings">
+                <source>Club Settings</source>
+                <target>Configuración del Club</target>
+            </trans-unit>
+            <trans-unit id="exit">
+                <source>Exit</source>
+                <target>Salir</target>
+            </trans-unit>
+            
+            <!-- General Forms -->
+            <trans-unit id="save">
+                <source>Save</source>
+                <target>Guardar</target>
+            </trans-unit>
+            <trans-unit id="cancel">
+                <source>Cancel</source>
+                <target>Cancelar</target>
+            </trans-unit>
+
+            <!-- Forms -->
+            <trans-unit id="username">
+                <source>Username</source>
+                <target>Usuario</target>
+            </trans-unit>
+            <trans-unit id="password">
+                <source>Password</source>
+                <target>Contraseña</target>
+            </trans-unit>
+            <trans-unit id="login">
+                <source>Login</source>
+                <target>Entrar</target>
+            </trans-unit>
+            <trans-unit id="register">
+                <source>Register</source>
+                <target>Registrarse</target>
+            </trans-unit>
+            <trans-unit id="enterUsername">
+                <source>Enter your username</source>
+                <target>Introduce tu usuario</target>
+            </trans-unit>
+            <trans-unit id="enterEmail">
+                <source>Enter your e-mail</source>
+                <target>Introduce tu e-mail</target>
+            </trans-unit>
+            <trans-unit id="enterPassword">
+                <source>Enter your password</source>
+                <target>Introduce tu contraseña</target>
+            </trans-unit>
+            <trans-unit id="repeatPassword">
+                <source>Repeat your password</source>
+                <target>Repite tu contraseña</target>
+            </trans-unit>
+           
+            <!-- General Database Info -->
+            <trans-unit id="name">
+                <source>Name</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="email">
+                <source>Email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="phone">
+                <source>Phone</source>
+                <target>Telefono</target>
+            </trans-unit>
+             <trans-unit id="edit">
+                <source>Edit Information</source>
+                <target>Editar Información</target>
+            </trans-unit>
+
+            <!-- User Info -->
+            <trans-unit id="age">
+                <source>Age</source>
+                <target>Edad</target>
+            </trans-unit>
+            <trans-unit id="nationality">
+                <source>Nationality</source>
+                <target>Nacionalidad</target>
+            </trans-unit>
+            <trans-unit id="equipment">
+                <source>Equipment</source>
+                <target>Equipo</target>
+            </trans-unit>
+           
+            <!-- Club Info-->      
+            <trans-unit id="clubsData">
+                <source>Club's Data</source>
+                <target>Datos del Club</target>
+            </trans-unit>
+            <trans-unit id="address">
+                <source>Address</source>
+                <target>Dirección</target>
+            </trans-unit>
+            <trans-unit id="schedule">
+                <source>Schedule</source>
+                <target>Horario</target>
+            </trans-unit>
+            <trans-unit id="clubsInstallation">
+                <source>Club's Installation</source>
+                <target>Instalaciones del Club</target>
+            </trans-unit>
+            <trans-unit id="rental">
+                <source>Equipment Rental</source>
+                <target>Alquiler de Equipo</target>
+            </trans-unit>
+            <trans-unit id="food">
+                <source>Food Services</source>
+                <target>Servicios de Comida</target>
+            </trans-unit>
+            <trans-unit id="disableds">
+                <source>Disabled Access</source>
+                <target>Acceso de Discapacitados</target>
+            </trans-unit>
+            <trans-unit id="showers">
+                <source>Showers</source>
+                <target>Duchas</target>
+            </trans-unit>
+            <trans-unit id="gym">
+                <source>Gym</source>
+                <target>Gimnasio</target>
+            </trans-unit>
+            <trans-unit id="sauna">
+                <source>Sauna</source>
+                <target>Sauna</target>
+            </trans-unit>
+            <trans-unit id="kindergarten">
+                <source>Kindergarten</source>
+                <target>Guardería</target>
+            </trans-unit>
+            <trans-unit id="jacuzzi">
+                <source>Jacuzzi</source>
+                <target>Jacuzzi</target>
+            </trans-unit>
+            <trans-unit id="parking">
+                <source>Parking</source>
+                <target>Parking</target>
+            </trans-unit>
+            <trans-unit id="parkingMotorcycle">
+                <source>Parking Motorcycles</source>
+                <target>Parking de Motos</target>
+            </trans-unit>
+            <trans-unit id="parkingBicycles">
+                <source>Parking Bicycles</source>
+                <target>Parking de Bicis</target>
+            </trans-unit>
+            <trans-unit id="waterpool">
+                <source>Waterpool</source>
+                <target>Piscina</target>
+            </trans-unit>
+            <trans-unit id="locker">
+                <source>Locker</source>
+                <target>Taquillas</target>
+            </trans-unit>
+            <trans-unit id="shop">
+                <source>Shop</source>
+                <target>Tienda</target>
+            </trans-unit>
+            <trans-unit id="lockerRoom">
+                <source>Locker Room</source>
+                <target>Vestuario</target>
+            </trans-unit>
+            <trans-unit id="wifi">
+                <source>WiFi</source>
+                <target>WiFi</target>
+            </trans-unit>
+            <trans-unit id="playground">
+                <source>Playground</source>
+                <target>Zona Infantil</target>
+            </trans-unit>
+            <trans-unit id="school">
+                <source>School</source>
+                <target>Escuela</target>
+            </trans-unit>
+            <trans-unit id="americanTournament">
+                <source>American Tournament</source>
+                <target>Torneo Americano</target>
+            </trans-unit>
+            <trans-unit id="leagues">
+                <source>Leagues</source>
+                <target>Ligas</target>
+            </trans-unit>
+            <trans-unit id="ilumination">
+                <source>Ilumination</source>
+                <target>Iluminación</target>
+            </trans-unit>
+            <trans-unit id="courts">
+                <source>Courts</source>
+                <target>Canchas</target>
+            </trans-unit>
+            <trans-unit id="crystalCourts">
+                <source>Crystal Courts</source>
+                <target>Canchas de Cristal</target>
+            </trans-unit>
+            <trans-unit id="wallCourts">
+                <source>Wall Courts</source>
+                <target>Canchas de Pared</target>
+            </trans-unit>
+            <trans-unit id="coverCourts">
+                <source>Cover Courts</source>
+                <target>Canchas Cubiertas</target>
+            </trans-unit>
+            <trans-unit id="centralCourts">
+                <source>Central Courts</source>
+                <target>Canchas Centrales</target>
+            </trans-unit>
+            <trans-unit id="individualCourts">
+                <source>Individual Courts</source>
+                <target>Canchas Individuales</target>
+            </trans-unit>
+            <trans-unit id="contact">
+                <source>Contact</source>
+                <target>Contacto</target>
+            </trans-unit>
+            <trans-unit id="owner">
+                <source>Are you the owner?</source>
+                <target>¿Eres el dueño?</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

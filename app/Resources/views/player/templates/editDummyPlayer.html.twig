@@ -1,0 +1,48 @@
+{{ form_start(form, {'action': path('ajaxEditDummyPlayer', {'dummyId': id})}) }}
+	<div class="row form-group input-group-md">
+		<div class="col-md-offset-4 col-md-4">
+			{{form_widget(form.image)}}
+		</div>		
+		{{form_widget(form.oldPathImage)}}
+	</div>
+	<div class="row form-group input-group-md">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Name{%endtrans%}
+		</div>
+		<div class="col-md-3">
+			{{form_widget(form.name)}}
+		</div>
+	</div>
+	<div class="row form-group input-group-md">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Gender{%endtrans%}
+		</div>
+		<div class="col-md-3">
+			{{form_widget(form.gender)}}
+		</div>
+	</div>
+	<div class="row form-group input-group-md">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Level{%endtrans%}
+		</div>
+		<div class="col-md-3">
+			{{form_widget(form.level)}}
+		</div>
+	</div>
+	<div class="row form-group input-group-md">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Equipment{%endtrans%}
+		</div>
+		<div class="col-md-3">
+			{{form_widget(form.equipment)}}
+		</div>
+	</div>
+<div class="row user-info">
+	<div class="col-md-3 col-md-offset-5">
+		<div class="btn-group btn-block">
+			<button type="submit" onClick="fillInAddress();" class="btn btn-success">{% trans %}Save{% endtrans %}</button>
+			<button id="cancel_button" type="button" class="btn btn-danger">{% trans %}Cancel{% endtrans %}</button>
+		</div>
+	</div>
+</div>
+{{form_end(form)}}

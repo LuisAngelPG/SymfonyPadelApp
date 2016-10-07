@@ -1,0 +1,30 @@
+{% extends 'base/base.html.twig' %}
+{% set active = 0 %}
+
+{% block body %}
+{% set profile = app.session.get('profile') %}
+	<div class="container home-container">
+		<div class="clubs card-container">
+			<div class="block-header">Clubs News</div>
+			{% include 'web/templates/clubNews.html.twig' %}
+			{% include 'web/templates/clubNews.html.twig' %}
+			{% include 'web/templates/clubNews.html.twig' %}
+			{% include 'web/templates/clubNews.html.twig' %}
+			{% include 'web/templates/clubNews.html.twig' %}
+		</div>
+		<div class="matches card-container">
+			<div class="block-header">Matches News</div>
+			{% include 'web/templates/matchesNews.html.twig' %}
+			{% include 'web/templates/matchesNews.html.twig' %}
+		</div>
+		<div class="friends card-container">
+			<div class="block-header">Friends Activity</div>
+			{% include 'web/templates/friendsActivity.html.twig' %}
+			{% include 'web/templates/friendsActivity.html.twig' %}
+			{% include 'web/templates/friendsActivity.html.twig' %}
+			{% include 'web/templates/friendsActivity.html.twig' %}
+			{% include 'web/templates/friendsActivity.html.twig' %}
+			{% include 'web/templates/friendsActivity.html.twig' %}
+		</div>
+	</div>
+{% endblock %}	

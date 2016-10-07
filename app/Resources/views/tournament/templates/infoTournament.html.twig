@@ -1,0 +1,64 @@
+<div class="row">
+	<div class="col-md-offset-4 col-md-1">
+		{% trans %}Name{% endtrans %}
+	</div>
+	<div class="col-md-3">
+		{{tournament.name}}
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-offset-4 col-md-1">
+		{% trans %}Date{% endtrans %}
+	</div>
+	<div class="col-md-3">
+		{{tournament.date|date('d/M/Y h:m:s')}}
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-offset-4 col-md-1">
+		{% trans %}Type{% endtrans %}
+	</div>
+	<div class="col-md-3">
+		{{tournament.type}}
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-offset-4 col-md-1">
+		{% trans %}Players{% endtrans %}
+	</div>
+	<div class="col-md-3">
+	-----------Players-----------<br>
+		{% for player in players %}
+			{{player.name}}<br>
+		{% endfor %}
+		<br>
+	-----------Dummys------------<br>
+		{% for dummy in dummys %}
+			{{dummy.name}}<br>
+		{% endfor %}
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-offset-4 col-md-1">
+		{% trans %}Courts{% endtrans %}
+	</div>
+	<div class="col-md-3">
+		{{tournament.amountCourts}}
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-offset-4 col-md-1">
+		{% trans %}Status{% endtrans %}
+	</div>
+	<div class="col-md-3">
+		{{tournament.status}}
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-offset-4 col-md-1">
+		{% trans %}Club{% endtrans %}
+	</div>
+	<div class="col-md-3">
+		{{tournament.localClubName}}
+	</div>
+</div>

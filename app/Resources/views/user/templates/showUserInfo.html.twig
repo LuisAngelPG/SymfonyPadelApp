@@ -1,0 +1,105 @@
+{% set profile = app.session.get('profile') %}
+
+<div class="row user-info">
+	<div class="col-md-1 col-md-offset-4">
+		{% trans %}Username{% endtrans %}
+	</div>
+	<div class="col-md-3">
+		<div class="form-group input-group-sm">
+			{{ app.user.username}}
+		</div>
+	</div>
+</div>
+
+<div class="row user-info">
+	<div class="col-md-1 col-md-offset-4">
+		{% trans %}Name{% endtrans %}
+	</div>
+	<div class="col-md-3">
+		<div class="form-group input-group-sm">
+			{{ profile.name|capitalize}}
+		</div>
+	</div>
+</div>
+			
+<div class="row user-info">
+	<div class="col-md-1 col-md-offset-4">
+		{% trans %}Email{% endtrans %}
+	</div>
+	<div class="col-md-3">
+		<div class="form-group input-group-md">
+			{{ app.user.email }}
+		</div>
+	</div>
+</div>
+
+<div class="row user-info">
+	<div class="col-md-1 col-md-offset-4">
+		{% trans %}Phone{% endtrans %}
+	</div>
+	<div class="col-md-3">
+		<div class="form-group input-group-sm">
+			{% if profile.phoneNumber %}{{ profile.phoneNumber }}{% else %}&nbsp{% endif %}
+		</div>
+	</div>
+</div>
+
+<div class="row user-info">
+	<div class="col-md-1 col-md-offset-4">
+		{% trans %}Age{% endtrans %}
+	</div>
+	<div class="col-md-3">
+		<div class="form-group input-group-sm">
+			{% if profile.age %}{{ profile.age }}{% else %}&nbsp{% endif %}
+		</div>
+	</div>
+</div>
+
+<div class="row user-info">
+	<div class="col-md-1 col-md-offset-4">
+		{% trans %}Nationality{% endtrans %}
+	</div>
+	<div class="col-md-3">
+		<div class="form-group input-group-sm">
+			{% if profile.nationality %}{{ profile.nationality|countryName }}{% else %}&nbsp{% endif %}
+		</div>
+	</div>
+</div>
+
+<div class="row user-info">
+	<div class="col-md-1 col-md-offset-4">
+		{% trans %}Equipment{% endtrans %}			
+	</div>
+	<div class="col-md-3">
+		<div class="form-group input-group-sm">
+			{% if profile.equipment %}{{ profile.equipment.brand }}{% else %}&nbsp{% endif %}
+		</div>
+	</div>
+</div>
+
+<div class="row user-info">
+	<div class="col-md-1 col-md-offset-4">
+		{% trans %}Gender{% endtrans %}			
+	</div>
+	<div class="col-md-3">
+		<div class="form-group input-group-sm">
+			{% if profile.gender %}{{ profile.gender|capitalize }}{% else %}&nbsp{% endif %}
+		</div>
+	</div>
+</div>
+
+<div class="row user-info">
+	<div class="col-md-1 col-md-offset-4">
+		{% trans %}Level{% endtrans %}			
+	</div>
+	<div class="col-md-3">
+		<div class="form-group input-group-sm">
+			{% if profile.level %}{{ profile.level }}{% else %}&nbsp{% endif %}
+		</div>
+	</div>
+</div>
+<div class="row user-info">
+	<div class="col-md-3 col-md-offset-5">
+		<button id="edit_button" style="visibility:visible" type="button" class="btn btn-primary center">{% trans %}Edit Information{% endtrans %}</button>
+	</div>
+</div>

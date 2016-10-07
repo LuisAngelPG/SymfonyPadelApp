@@ -1,0 +1,119 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Match
+ *
+ * @ORM\Table(name="match")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\MatchRepository")
+ */
+class Match
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppUser", inversedBy="matchs")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    private $players;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="player2", type="string", length=255)
+     */
+    private $player2;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set player
+     *
+     * @param string $player
+     *
+     * @return Match
+     */
+    public function setPlayer($player)
+    {
+        $this->player = $player;
+
+        return $this;
+    }
+
+    /**
+     * Get player
+     *
+     * @return string
+     */
+    public function getPlayer()
+    {
+        return $this->player;
+    }
+
+    /**
+     * Set player2
+     *
+     * @param string $player2
+     *
+     * @return Match
+     */
+    public function setPlayer2($player2)
+    {
+        $this->player2 = $player2;
+
+        return $this;
+    }
+
+    /**
+     * Get player2
+     *
+     * @return string
+     */
+    public function getPlayer2()
+    {
+        return $this->player2;
+    }
+
+    /**
+     * Set players
+     *
+     * @param \AppBundle\Entity\AppUser $players
+     *
+     * @return Match
+     */
+    public function setPlayers(\AppBundle\Entity\AppUser $players = null)
+    {
+        $this->players = $players;
+
+        return $this;
+    }
+
+    /**
+     * Get players
+     *
+     * @return \AppBundle\Entity\AppUser
+     */
+    public function getPlayers()
+    {
+        return $this->players;
+    }
+}

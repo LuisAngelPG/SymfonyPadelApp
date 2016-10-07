@@ -1,0 +1,7 @@
+{% extends 'base/base.html.twig' %}
+{% set active = 2 %}
+{% block body %}
+	<div class="container rounded-box">
+		{% include 'tournament/templates/infoTournament.html.twig' with {'tournament': tournament} %}
+	</div>
+{% endblock %}

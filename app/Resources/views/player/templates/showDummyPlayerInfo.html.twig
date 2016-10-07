@@ -1,0 +1,49 @@
+<div class="row user-info">
+	<div class="col-md-1 col-md-offset-4">
+		{% trans %}Name{% endtrans %}
+	</div>
+	<div class="col-md-3">
+		<div class="form-group input-group-sm">
+			<div id="2">{{ dummy.name|capitalize}}</div>
+		</div>
+	</div>
+</div>
+
+<div class="row user-info">
+	<div class="col-md-1 col-md-offset-4">
+		{% trans %}Equipment{% endtrans %}			
+	</div>
+	<div class="col-md-3">
+		<div class="form-group input-group-sm">
+			<div id="7">{% if dummy.equipment %}{{ dummy.equipment.brand }}{% else %}&nbsp{% endif %}</div>
+		</div>
+	</div>
+</div>
+
+<div class="row user-info">
+	<div class="col-md-1 col-md-offset-4">
+		{% trans %}Gender{% endtrans %}			
+	</div>
+	<div class="col-md-3">
+		<div class="form-group input-group-sm">
+			<div id="7">{% if dummy.gender %}{{ dummy.gender }}{% else %}&nbsp{% endif %}</div>
+		</div>
+	</div>
+</div>
+
+<div class="row user-info">
+	<div class="col-md-1 col-md-offset-4">
+		{% trans %}Level{% endtrans %}			
+	</div>
+	<div class="col-md-3">
+		<div class="form-group input-group-sm">
+			<div id="7">{% if dummy.level %}{{ dummy.level }}{% else %}&nbsp{% endif %}</div>
+		</div>
+	</div>
+</div>
+
+<div class="row user-info">
+	<div class="col-md-3 col-md-offset-5">
+		<button id="edit_button" type="button" class="btn btn-primary center">{% trans %}Edit Information{% endtrans %}</button>
+	</div>
+</div>

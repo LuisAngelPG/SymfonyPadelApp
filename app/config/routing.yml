@@ -1,0 +1,71 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+locale:
+  path: /
+  defaults:  { _controller: AppBundle:Web:index }
+
+main:
+  resource: "@AppBundle/Controller"
+  prefix: /{_locale}
+  type: annotation
+  requirements:
+    _locale: en|es
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+ajaxUserEdit:
+    path:  /{_locale}/user/ajaxEdit
+    defaults: { _controller: AppBundle:User:ajaxEdit }
+    options:
+        expose: true
+
+ajaxUserCancel:
+    path: /{_locale}/user/ajaxCancel
+    defaults: { _controller: AppBundle:User:ajaxCancel }
+    options:
+        expose: true
+
+ajaxClubFav:
+    path: /{_locale}/user/ajaxClubFav/{clubId}
+    defaults: { _controller: AppBundle:User:ajaxClubFav }
+    options:
+        expose: true
+
+ajaxRemoveFavClub:
+    path: /{_locale}/user/ajaxRemoveFavClub/{clubId}
+    defaults: { _controller: AppBundle:User:ajaxRemoveFavClub }
+    options:
+        expose: true
+
+ajaxClubEdit:
+    path:  /{_locale}/club/ajaxEdit/{clubId}
+    defaults: { _controller: AppBundle:Club:clubAjaxEdit }
+    options:
+        expose: true
+
+ajaxClubCancel:
+    path:  /{_locale}/club/ajaxCancel/{clubId}
+    defaults: { _controller: AppBundle:Club:clubAjaxCancel }
+    options:
+        expose: true
+
+ajaxFriend:
+    path:  /{_locale}/player/ajaxFriend/{playerId}
+    defaults: { _controller: AppBundle:Player:playerFriend }
+    options:
+        expose: true
+
+ajaxRemoveFriend:
+    path:  /{_locale}/player/ajaxRemoveFriend/{friendId}
+    defaults: { _controller: AppBundle:Player:ajaxRemoveFriend }
+    options:
+        expose: true
+
+ajaxEditDummy:
+    path:  /{_locale}/player/ajaxEditDummyPlayer/{dummyId}
+    defaults: { _controller: AppBundle:Player:ajaxEditDummyPlayer }
+    options:
+        expose: true

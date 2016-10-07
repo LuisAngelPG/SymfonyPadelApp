@@ -1,0 +1,397 @@
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#club_data_{{ club.id }}">{% trans %}Club's Data{% endtrans %}</button>
+		<br /><br />
+	</div>
+</div>
+<div id="club_data_{{ club.id }}" class="collapse">
+	<div class="row user-info">
+		<div class="col-md-1 col-md-offset-4">
+			{% trans %}Name{% endtrans %}
+		</div>
+		<div class="col-md-3">
+			<div class="form-group input-group-sm">
+				{{ club.name }}
+			</div>
+		</div>
+	</div>
+
+	<div class="row user-info">
+		<div class="col-md-1 col-md-offset-4">
+			{% trans %}Phone{% endtrans %}
+		</div>
+		<div class="col-md-3">
+			<div class="form-group input-group-sm">
+				{{ club.phoneNumber }}
+			</div>
+		</div>
+	</div>
+
+	<div class="row user-info">
+		<div class="col-md-1 col-md-offset-4">
+			{% trans %}Email{% endtrans %}
+		</div>
+		<div class="col-md-3">
+			<div class="form-group input-group-sm">
+				{{ club.email }}
+			</div>
+		</div>
+	</div>
+
+	<div class="row user-info">
+		<div class="col-md-1 col-md-offset-4">
+			{% trans %}Address{% endtrans %}
+		</div>
+		<div class="col-md-3">
+			<div class="form-group input-group-sm">
+				{{ club.address }}
+			</div>
+		</div>
+	</div>
+
+	<div class="row user-info">
+		<div class="col-md-1 col-md-offset-4">
+			{% trans %}Schedule{% endtrans %}
+		</div>
+		<div class="col-md-3">
+			<div class="form-group input-group-sm">
+				{{ club.horario }}
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#club_installations_{{ club.id }}">{% trans %}Club's Installation{% endtrans %}</button>
+			<br /><br />
+	</div>
+</div>
+<div id="club_installations_{{ club.id }}" class="collapse">
+	{% if club.courts %}
+		<div class="row user-info">
+			<div class="col-md-1 col-md-offset-4">
+				{% trans %}Courts{% endtrans %}
+			</div>
+			<div class="col-md-3">
+				<div class="form-group input-group-sm">
+					{{ club.courts }}
+				</div>
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.equipmentRental %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+					{% trans %}Equipment Rental{% endtrans %}&nbsp{{ club.equipmentRental }}<br />
+			</div>
+		</div>
+	{% endif %}
+	
+	{% if club.foodServices %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+					{% trans %}Food Services{% endtrans %}&nbsp{{ club.foodServices }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.showers %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">		
+					{% trans %}Showers{% endtrans %}&nbsp{{ club.showers }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.disabledAccess %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Disabled Access{% endtrans %}&nbsp{{ club.disabledAccess }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.gym %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Gym{% endtrans %}&nbsp{{ club.gym }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.sauna %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Sauna{% endtrans %}&nbsp{{ club.sauna }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.kindergarten %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Kindergarten{% endtrans %}&nbsp{{ club.kindergarten }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.jacuzzi %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Jacuzzi{% endtrans %}&nbsp{{ club.jacuzzi }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.parking %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Parking{% endtrans %}&nbsp{{ club.parking }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.parkingMotorcycles %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Parking Motorcycles{% endtrans %}&nbsp{{ club.parkingMotorcycles }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.parkingBicycles %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Parking Bicycles{% endtrans %}&nbsp{{ club.parkingBicycles }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.waterpool %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Waterpool{% endtrans %}&nbsp{{ club.waterpool }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.locker %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">		
+				{% trans %}Locker{% endtrans %}&nbsp{{ club.locker }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.shop %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Shop{% endtrans %}&nbsp{{ club.shop }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.WiFi %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}WiFi{% endtrans %}&nbsp{{ club.WiFi }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.playground %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">		
+				{% trans %}Playground{% endtrans %}&nbsp{{ club.playground }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.school %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">		
+				{% trans %}School{% endtrans %}&nbsp{{ club.school }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.americanTournament %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}American Tournament{% endtrans %}&nbsp{{ club.americanTournament }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.leagues %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Leagues{% endtrans %}&nbsp{{ club.leagues }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.ilumination %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Ilumination{% endtrans %}&nbsp{{ club.ilumination }}<br />
+			</div>	
+		</div>
+	{% endif %}
+
+	{% if club.crystalCourts %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Crystal Courts{% endtrans %}&nbsp{{ club.crystalCourts }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.wallCourts %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Wall Courts{% endtrans %}&nbsp{{ club.wallCourts }}<br />
+			</div>
+		</div>
+	{% endif %}
+	
+	{% if club.coverCourts %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Cover Courts{% endtrans %}&nbsp{{ club.coverCourts }}<br />
+			</div>	
+		</div>
+	{% endif %}
+
+	{% if club.centralCourts %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Central Courts{% endtrans %}&nbsp{{ club.centralCourts }}<br />
+			</div>
+		</div>
+	{% endif %}
+
+	{% if club.individualCourts %}
+		<div class="row user-info">
+			<div class="col-md-4 col-md-offset-4">
+				{% trans %}Individual Courts{% endtrans %}&nbsp{{ club.individualCourts }}<br />
+			</div>
+		</div>
+	{% endif %}
+</div>
+
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#club_webs_{{ club.id }}">Webs</button>
+			<br /><br />
+	</div>
+</div>
+
+<div id="club_webs_{{ club.id }}" class="collapse">
+	<div class="row user-info">
+		<div class="col-md-1 col-md-offset-4">
+			Web
+		</div>
+		<div class="col-md-3">
+			<div class="form-group input-group-sm">
+				{{ club.url }}
+			</div>
+		</div>
+	</div>
+
+	<div class="row user-info">
+		<div class="col-md-1 col-md-offset-4">
+			Facebook
+		</div>
+		<div class="col-md-3">
+			<div class="form-group input-group-sm">
+				{{ club.facebookUrl }}
+			</div>
+		</div>
+	</div>
+
+	<div class="row user-info">
+		<div class="col-md-1 col-md-offset-4">
+			Twitter
+		</div>
+		<div class="col-md-3">
+			<div class="form-group input-group-sm">
+				{{ club.twitterUrl }}
+			</div>
+		</div>
+	</div>
+
+	<div class="row user-info">
+		<div class="col-md-1 col-md-offset-4">
+			Instagram
+		</div>
+		<div class="col-md-3">
+			<div class="form-group input-group-sm">
+				{{ club.instantgramUrl }}
+			</div>
+		</div>
+	</div>
+
+	<div class="row user-info">
+		<div class="col-md-1 col-md-offset-4">
+			Skype
+		</div>
+		<div class="col-md-3">
+			<div class="form-group input-group-sm">
+				{{ club.skypeUsername }}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#club_contact_{{ club.id }}">{% trans %}Contact{% endtrans %}</button>
+			<br /><br />
+	</div>
+</div>
+
+<div id="club_contact_{{ club.id }}" class="collapse">
+
+   	<div class="row user-info">
+		<div class="col-md-1 col-md-offset-4">
+			{% trans %}Name{% endtrans %}
+		</div>
+		<div class="col-md-3">
+			<div class="form-group input-group-sm">
+				{{ club.nombreContacto }}				
+			</div>
+		</div>
+	</div>
+
+	<div class="row user-info">
+		<div class="col-md-1 col-md-offset-4">
+			{% trans %}Email{% endtrans %}
+		</div>
+		<div class="col-md-3">
+			<div class="form-group input-group-sm">
+				{{ club.emailContacto }}
+			</div>
+		</div>
+	</div>
+
+	<div class="row user-info">
+		<div class="col-md-1 col-md-offset-4">
+			{% trans %}Phone{% endtrans %}
+		</div>
+		<div class="col-md-3">
+			<div class="form-group input-group-sm">
+				{{ club.phoneNumberMovi }}
+			</div>
+		</div>
+	</div>
+</div>
+
+{% if is_granted('ROLE_ADMIN') or app.user.id == club.owner or club.owner ==  null %}
+	<div class="row user-info">
+		<div class="col-md-3 col-md-offset-5">
+			<button id="edit_button" type="button" class="btn btn-primary center">{% trans %}Edit Information{% endtrans %}</button>
+		</div>
+	</div>
+{% endif %}

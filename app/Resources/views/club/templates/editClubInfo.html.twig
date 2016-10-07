@@ -1,0 +1,384 @@
+{{ form_start(form, {'action': path('clubAjaxEdit', {'clubId': id})}) }}
+<div class="row">
+	<div class="col-md-offset-4 col-md-4">
+		<div class="form-group input-group-md">
+			{{form_widget(form.image)}}
+		</div>
+		{{form_widget(form.oldPathImage)}}
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#club_data">{% trans %}Club's Data{% endtrans %}</button>
+		<br /><br />
+	</div>
+</div>
+
+<div id="club_data" class="collapse">
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Name{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.name)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Phone{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.phoneNumber)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Email{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.email)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Location{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{ form_widget(form.location, {'attr': {'id': 'autocomplete', 'onFocus': 'geolocate()'}}) }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Schedule{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.horario)}}
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#club_installations">{% trans %}Club's Installation{% endtrans %}</button>
+		<br /><br />
+	</div>
+</div>
+
+<div id="club_installations" class="collapse">
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Courts{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.amountCourt)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Crystal Courts{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.crystalCourts)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Wall Courts{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.wallCourts)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Cover Courts{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.coverCourts)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Central Courts{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.centralCourts)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Individual Courts{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.individualCourts)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Equipment Rental{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.equipmentRental)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Food Services{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.foodServices)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Showers{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.showers)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Disabled Access{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.disabledAccess)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Gym{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.gym)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Sauna{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.sauna)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Kindergarte{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.kindergarten)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Jacuzzi{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.jacuzzi)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Parking{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.parking)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Parking Motorcycles{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.parkingMotorcycles)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Parking Bicycles{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.parkingBicycles)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Waterpool{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.waterpool)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Locker{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.locker)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Shop{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.shop)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Wifi{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.wifi)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Playground{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.playground)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}School{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.school)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}American Tournament{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.americanTournament)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Leagues{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.leagues)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Ilumination{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.ilumination)}}
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#club_webs">{% trans %}Club's Data{% endtrans %}</button>
+		<br /><br />
+	</div>
+</div>
+
+<div id="club_webs" class="collapse">
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Web{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.url)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Facebook{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.facebookUrl)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Twitter{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.twitterUrl)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Instagram{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.instantgramUrl)}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Skype{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{{form_widget(form.skypeUsername)}}
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#club_contact">{% trans %}Contact{% endtrans %}</button>
+		<br /><br />
+	</div>
+</div>
+
+<div id="club_contact" class="collapse">
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Name{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{% if owner %} 
+				{{form_widget(form.nombreContacto)}}
+			{% else %}
+				{{ club.nombreContacto}}&nbsp
+			{% endif %}
+				
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Email{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{% if owner %} 
+				{{form_widget(form.emailContacto)}}
+			{% else %}
+				{{ club.emailContacto }}&nbsp
+			{% endif %}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-4 col-md-1">
+			{%trans%}Phone{%endtrans%}
+		</div>
+		<div class="col-md-3 form-group input-group-md">
+			{% if owner %} 
+				{{form_widget(form.phoneNumberMovi)}}
+			{% else %}
+				{{club.phoneNumberMovi}}&nbsp
+			{% endif %}
+		</div>
+	</div>
+</div>
+
+<div class="row user-info">
+	<div class="col-md-3 col-md-offset-5">
+		<div class="btn-group btn-block">
+			<button type="submit" onClick="fillInAddress();" class="btn btn-success">{% trans %}Save{% endtrans %}</button>
+			<button id="cancel_button" type="button" class="btn btn-danger">{% trans %}Cancel{% endtrans %}</button>
+		</div>
+	</div>
+</div>
+{{ form_end(form, {'render_rest': false}) }}

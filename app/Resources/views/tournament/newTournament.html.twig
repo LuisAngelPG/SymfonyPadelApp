@@ -1,0 +1,246 @@
+{% extends 'base/base.html.twig' %}
+{% set active = 2 %}
+{% block javascripts %}
+	{{ parent() }}
+	<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+	<script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
+	{% javascripts '@AppBundle/*' output='js/compiled/main.js' %}
+		<script src="{{ asset('bundles/web/js/ajax.js') }}" type="text/javascript"></script>
+	{% endjavascripts %}
+	
+
+	<script>
+		var optionsIndividual = {
+			"4 Players": "4",
+			"5 Players": "5",
+			"6 Players": "6",
+			"8 Players, 2 Courts": "8,2",
+			"12 Players, 3 Courts": "12,3",
+			"16 Players, 4 Courts": "16,4"
+		};
+
+		var optionsMixed = {
+			"4 Players": "4",
+			"6 Players": "6",
+			"8 Players, 2 Courts": "8,2",
+			"12 Players, 3 Courts": "12,3",
+			"16 Players, 4 Courts": "16,4"
+		};
+
+		var optionsPartners = {
+			"4 Partners, 2 Courts": "4,2",
+			"5 Partners, 2 Courts": "5,2",
+			"6 Partners, 3 Courts": "6,3",
+			"7 Partners, 3 Courts": "7,3",
+			"8 Partners, 4 Courts": "8,4",
+			"9 Partners, 4 Courts": "9,4",
+			"10 Partners, 5 Courts": "10,5",
+			"11 Partners, 5 Courts": "11,5",
+			"12 Partners, 6 Courts": "12,6",
+			"13 Partners, 6 Courts": "13,6",
+			"14 Partners, 7 Courts": "14,7",
+
+		};
+
+		function addPlayer() {
+    		var $collectionHolder = $('#players_container');
+   			$collectionHolder.data('index', $collectionHolder.find(':input').length);
+
+   			var prototype = $collectionHolder.data('prototype');
+
+		    // get the new ind
+		    var index = $collectionHolder.data('index');
+
+		    // Replace '__name__' in the prototype's HTML to
+		    // instead be a number based on how many items we have
+		    var newForm = prototype.replace(/__name__/g, index);
+
+		    // increase the index with one for the next item
+		    $collectionHolder.data('index', index + 1);
+
+		    // Display the form in the page in an li, before the "Add a tag" link li
+		    var $newFormLi = $('<div></div>').append(newForm);
+		    $collectionHolder.append($newFormLi);
+
+		}
+
+		function removeAll() {
+			var $collectionHolder = $('#players_container');
+			$collectionHolder.empty();
+		}
+
+		function updatePlayersCourts() {
+			var type = $("#tournament_type");
+			var select = $("#tournament_playersCourts");
+			var selected = type.find(":selected").text();
+			select.empty();
+
+			switch(selected) {
+				case "Individual":	
+					$.each(optionsIndividual, function(key,value) {
+				  	select.append($("<option></option>")
+				    	.attr("value", value).text(key));
+					});
+					break;
+
+				case "Mixed":
+					$.each(optionsMixed, function(key,value) {
+				  	select.append($("<option></option>")
+				    	.attr("value", value).text(key));
+					});
+					break;
+
+				case "Partners":
+					$.each(optionsPartners, function(key,value) {
+				  	select.append($("<option></option>")
+				    	.attr("value", value).text(key));
+					});
+					break;
+			}
+			updatePlayers();
+		}
+
+		function updatePlayers() {
+			var select = $("#tournament_playersCourts");
+			var type = $("#tournament_type").find(":selected").text();
+			var selected = select.find(":selected").val();
+			var players = selected.split(",")[0];
+			if (type.localeCompare("Partners") == 0) {
+				players = players * 2;
+			}
+		   	removeAll();
+		    for (i=0;i<players;i++) {
+		    	addPlayer();
+		    }
+		}
+
+		function addSpectator() {
+			var $collectionHolder = $('#spectators_container');
+   			$collectionHolder.data('index', $collectionHolder.find(':input').length);
+
+   			var prototype = $collectionHolder.data('prototype');
+
+		    // get the new ind
+		    var index = $collectionHolder.data('index');
+
+		    // Replace '__name__' in the prototype's HTML to
+		    // instead be a number based on how many items we have
+		    var newForm = prototype.replace(/__name__/g, index);
+
+		    // increase the index with one for the next item
+		    $collectionHolder.data('index', index + 1);
+
+		    // Display the form in the page in an li, before the "Add a tag" link li
+		    var $newFormLi = $('<div></div>').append(newForm);
+		    $collectionHolder.append($newFormLi);
+		    addDeleteSpectator($newFormLi);
+		}
+
+		function addDeleteSpectator($spectatorFormLi) {
+		    var $removeFormA = $('<button type="button">X</button>');
+		    $spectatorFormLi.append($removeFormA);
+
+		    $removeFormA.on('click', function(e) {
+		        // prevent the link from creating a "#" on the URL
+		        e.preventDefault();
+
+		        // remove the li for the tag form
+		        $spectatorFormLi.remove();
+		    });
+		}
+
+
+		$( document ).ready(function() {
+			updatePlayersCourts();
+			updatePlayers();
+		})
+
+		$('#tournament_playersCourts').on('change', function(event){
+			event.preventDefault();
+			updatePlayers() 
+		});
+
+		$("#tournament_type").change(function () {
+			updatePlayersCourts();
+		});
+	</script>
+
+{% endblock %}
+{% block body %}
+
+	<div class="container rounded-box">
+		{{form_start(form)}}
+			<div class="row">
+				<div class="col-md-1 col-md-offset-4">
+					{% trans %}Name{% endtrans %}
+				</div>
+				<div class="col-md-3">
+					{{form_widget(form.name)}}
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col-md-1 col-md-offset-4">
+					{% trans %}Date{% endtrans %}
+				</div>
+				<div class="col-md-3">
+					{{form_widget(form.date)}}
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col-md-1 col-md-offset-4">
+					{% trans %}Club{% endtrans %}
+				</div>
+				<div class="col-md-3">
+					{{form_widget(form.club)}}
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col-md-1 col-md-offset-4">
+					{% trans %}Score{% endtrans %}
+				</div>
+				<div class="col-md-3">
+					{{form_widget(form.scoring)}}
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col-md-1 col-md-offset-4">
+					{% trans %}Type{% endtrans %}
+				</div>
+				<div class="col-md-3">
+					{{form_widget(form.type)}}
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col-md-1 col-md-offset-4">
+					{% trans %}Players{% endtrans %}
+				</div>
+				<div class="col-md-3">
+					{{form_widget(form.playersCourts)}}
+				</div>
+			</div>		
+			<div class="row">
+				<div class="col-md-3 col-md-offset-5">
+					<div id="players_container" data-prototype="{{ form_widget(form.players.vars.prototype.player)|e('html_attr') }}">
+					</div>
+				</div>
+			</div>		
+			<div class="row">
+				<div class="col-md-1 col-md-offset-4">
+					Spectators
+				</div>
+				<div class="col-md-3">
+					<button type="button" onclick="addSpectator()">Add Spectator</button>
+					<div id="spectators_container" data-prototype="{{ form_widget(form.spectators.vars.prototype.player)|e('html_attr') }}">
+					</div>
+				</div>
+			</div>		
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					<button id="saveTournament" type="submit" class="button">{% trans %}Save Tournament{% endtrans %}</button>
+				</div>
+			</div>
+			{{ form_widget(form._token) }}
+		{{ form_end(form, {'render_rest': false}) }}
+
+{% endblock %}

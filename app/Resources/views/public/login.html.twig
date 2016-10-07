@@ -1,0 +1,35 @@
+{% extends 'base/base.html.twig' %}
+{% set active = -1 %}
+{% block navbar %} 
+    {% include 'base/navbar.html.twig' %}
+{% endblock %}
+{% block body %} 
+    <div class="container fill-height">
+        <div class="row valign">
+            <div class="col-xs-12 col-md-4 col-md-offset-4">
+                <form name="login" method='post' action="{{ path('login_check') }}"" class="login-register-form jumbotron" id="jumbo">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="text" id="inputName" name='_username' class="form-control" placeholder="{% trans %}Username{% endtrans %}" autofocus data-validation="required alphanumeric" > 
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password" id="inputPassword" name="_password" class="form-control" placeholder="{% trans %}Password{% endtrans %}" data-validation="required" >
+                        </div>
+                    </div>
+
+                    <a href="{{ path('forgotPassword') }}">{% trans %}Forgot your password?{% endtrans %}</a>
+
+                    <div class="btn-group btn-block">
+                        <button class="btn btn-50 btn-lg btn-primary" type="submit">{% trans %}Login{% endtrans %}</button>
+                        <a href="{{path('registerUser')}}" class="btn btn-50 btn-lg btn-info">{% trans %}Register{% endtrans %}</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
