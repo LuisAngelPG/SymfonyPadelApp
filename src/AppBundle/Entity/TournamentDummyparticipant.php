@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * TournamentPlayerparticipant
  *
- * @ORM\Table(name="tournament_dummyparticipant", uniqueConstraints={@ORM\UniqueConstraint(name="tournament_dummy_playerparticipan_tournament_id_58aa035d515dd3bf6_uniq", columns={"tournament_id", "dummy_player_id"})}, indexes={@ORM\Index(name="tournament_dummy_playerparticipant_65da3fdb", columns={"tournament_id"}), @ORM\Index(name="tournament_dummy_player_participant_afe72417", columns={"dummy_player_id"})})
+ * @ORM\Table(name="tournament_dummyparticipant", uniqueConstraints={@ORM\UniqueConstraint(name="tournament_dummy_playerparticipan_tournament_id_58aaee035d515dd3bf6_uniq", columns={"tournament_id", "dummy_player_id"})}, indexes={@ORM\Index(name="tournament_dummy_playerparticipant_65da3fdb", columns={"tournament_id"}), @ORM\Index(name="tournament_dummy_player_participant_afe72417", columns={"dummy_player_id"})})
  * @ORM\Entity
  */
 class TournamentDummyparticipant
