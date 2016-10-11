@@ -1,2 +1,2 @@
-/app/config/parameters.yml
-/var/cache/*
+app/config/parameters.yml
+var/cache/*
