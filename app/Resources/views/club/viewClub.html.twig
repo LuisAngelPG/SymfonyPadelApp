@@ -2,10 +2,8 @@
 {% set active = 3 %}
 {% block javascripts %}
 	{{ parent() }}
-	{% javascripts '@AppBundle/*' output='js/compiled/main.js' %}
 	<script src="{{ asset('bundles/web/js/ajax.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('bundles/web/js/libs/googleMaps.js') }}" type="text/javascript"></script>
-{% endjavascripts %}
 
 
 	<script>

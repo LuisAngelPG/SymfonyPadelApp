@@ -2,9 +2,7 @@
 {% set active = 4%}
 {% block javascripts %}
 	{{ parent() }}
-	{% javascripts '@AppBundle/*' output='js/compiled/main.js' %}
-		<script src="{{ asset('bundles/web/js/ajax.js') }}" type="text/javascript"></script>
-	{% endjavascripts %}
+	<script src="{{ asset('bundles/web/js/ajax.js') }}" type="text/javascript"></script>
 	<script>
 		$("#dummy_player_image").change(function(evt) {
 			changeImage(evt, "dummy_avatar");			
