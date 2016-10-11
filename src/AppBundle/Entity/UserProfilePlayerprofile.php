@@ -65,21 +65,21 @@ class UserProfilePlayerprofile extends Player
      * @ORM\Column(name="is_dummy", type="boolean", nullable=false)
      */
     private $isDummy;
-
+/*
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="created", type="datetimetz", nullable=true)
-     */
+     
     private $created;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="updated", type="datetimetz", nullable=true)
-     */
+     
     private $updated;
-
+*/
     /**
      * @var integer
      *

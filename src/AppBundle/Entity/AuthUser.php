@@ -85,14 +85,14 @@ class AuthUser implements UserInterface, \Serializable
      * @ORM\Column(name="is_active", type="boolean", nullable=false)
      */
     private $isActive;
-
+/*
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="date_joined", type="datetimetz", nullable=false)
-     */
+     
     private $dateJoined;
-
+*/
     /**
      * @var integer
      *
