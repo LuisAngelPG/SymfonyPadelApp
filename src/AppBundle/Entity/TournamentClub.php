@@ -101,7 +101,7 @@ class TournamentClub
      *
      * @ORM\Column(name="URL", type="string", length=350, nullable=true)
      */
-    private $URL;
+    private $url;
 
     /**
      * @var string
