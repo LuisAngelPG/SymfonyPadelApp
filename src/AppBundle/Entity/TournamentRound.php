@@ -22,14 +22,14 @@ class TournamentRound
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created", type="datetimetz", nullable=false)
+     * @ORM\Column(name="created", type="datetimetz", nullable=true)
      */
     private $created;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="updated", type="datetimetz", nullable=false)
+     * @ORM\Column(name="updated", type="datetimetz", nullable=true)
      */
     private $updated;
 

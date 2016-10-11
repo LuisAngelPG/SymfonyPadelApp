@@ -2,6 +2,6 @@
 {% set active = 2 %}
 {% block body %}
 	<div class="container rounded-box">
-		{% include 'tournament/templates/infoTournament.html.twig' with {'tournament': tournament} %}
+		{% include 'tournament/templates/infoTournament.html.twig' with {'tournament': tournament, 'rounds': rounds} %}
 	</div>
 {% endblock %}

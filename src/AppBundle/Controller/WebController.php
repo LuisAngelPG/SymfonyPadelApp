@@ -35,9 +35,6 @@ class WebController extends Controller {
      * @Route("/web/matches", name="matches")
      */
     public function matches(Request $request) {
-        $repo = $this->getDoctrine()->getRepository('AppBundle:UserProfileFacebookprofile');
-        $facebookprofile = $repo->findOneById('133');
-        dump($facebookprofile);die();
         return $this->render('web/matches.html.twig');
     }
 

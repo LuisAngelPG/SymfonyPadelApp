@@ -168,23 +168,11 @@
 	  	$( function() {
 	   		$( "#sortable" ).sortable({
    		        start: function(event, ui) {
-		            var start_pos = ui.item.index();
-		            ui.item.data('start_pos', start_pos);
 	       		},
 		        update: function(event, ui) {
-		            var start_pos = ui.item.data('start_pos');
-		            var end_pos = ui.item.index();
-   		        	console.log(ui);
-		            alert(start_pos + ' - ' + end_pos);
 		        }
 		    });
 	 	});
-
-	 	function test() {
-		 var idsInOrder = $("#sortable").sortable("toArray");
-		   //-----------------^^^^
-		   console.log(idsInOrder);
-        }
 	</script>
 
 {% endblock %}
@@ -192,7 +180,6 @@
 
 	<div class="container rounded-box">
 		{{form_start(form)}}
-		<button type="button" onclick="test()">test</button>
 			<div class="row">
 				<div class="col-md-1 col-md-offset-4">
 					{% trans %}Name{% endtrans %}
