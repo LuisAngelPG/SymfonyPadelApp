@@ -89,7 +89,7 @@ class AuthUser implements UserInterface, \Serializable
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_joined", type="datetimetz", nullable=false)
+     * @ORM\Column(name="date_joined", type="datetimetz", nullable=true)
      */
     private $dateJoined;
 
