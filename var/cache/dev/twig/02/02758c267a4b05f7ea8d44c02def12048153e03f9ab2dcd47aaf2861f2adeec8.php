@@ -22,66 +22,41 @@ class __TwigTemplate_ba6ba391fa330ef1a4ac1344b708f01a0b145f7cfd779c0f02c2b9f0ed3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_0c382efe751f93eaa0cd6921da4164198dc8cd7b2113bbaf3da3863786693dda = $this->env->getExtension("native_profiler");
-        $__internal_0c382efe751f93eaa0cd6921da4164198dc8cd7b2113bbaf3da3863786693dda->enter($__internal_0c382efe751f93eaa0cd6921da4164198dc8cd7b2113bbaf3da3863786693dda_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "player/viewDummyPlayer.html.twig"));
+        $__internal_533c4dadb7332942d753d6a4d41e3f54176d3f1b3f818cdadfdf0f8275ef52cf = $this->env->getExtension("native_profiler");
+        $__internal_533c4dadb7332942d753d6a4d41e3f54176d3f1b3f818cdadfdf0f8275ef52cf->enter($__internal_533c4dadb7332942d753d6a4d41e3f54176d3f1b3f818cdadfdf0f8275ef52cf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "player/viewDummyPlayer.html.twig"));
 
         // line 2
         $context["active"] = 4;
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_0c382efe751f93eaa0cd6921da4164198dc8cd7b2113bbaf3da3863786693dda->leave($__internal_0c382efe751f93eaa0cd6921da4164198dc8cd7b2113bbaf3da3863786693dda_prof);
+        $__internal_533c4dadb7332942d753d6a4d41e3f54176d3f1b3f818cdadfdf0f8275ef52cf->leave($__internal_533c4dadb7332942d753d6a4d41e3f54176d3f1b3f818cdadfdf0f8275ef52cf_prof);
 
     }
 
     // line 3
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_8cc62aa9ed593f106b538b5f2d3d7a281ebdf54ce503e8860317f31505f55966 = $this->env->getExtension("native_profiler");
-        $__internal_8cc62aa9ed593f106b538b5f2d3d7a281ebdf54ce503e8860317f31505f55966->enter($__internal_8cc62aa9ed593f106b538b5f2d3d7a281ebdf54ce503e8860317f31505f55966_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_2644dd78cb5b8f8d484d570eef157390ceb0c33a611dfbf3e9e0ed29cbe30b8c = $this->env->getExtension("native_profiler");
+        $__internal_2644dd78cb5b8f8d484d570eef157390ceb0c33a611dfbf3e9e0ed29cbe30b8c->enter($__internal_2644dd78cb5b8f8d484d570eef157390ceb0c33a611dfbf3e9e0ed29cbe30b8c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 4
         echo "\t";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
-\t";
+\t<script src=\"";
         // line 5
-        if (isset($context['assetic']['debug']) && $context['assetic']['debug']) {
-            // asset "cccbafd_0"
-            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_cccbafd_0") : $this->env->getExtension('asset')->getAssetUrl("_controller/js/compiled/main_part_1_AppBundle_1.js");
-            // line 6
-            echo "\t\t<script src=\"";
-            echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/fosjsrouting/js/router.js"), "html", null, true);
-            echo "\"></script>
-\t\t<script src=\"";
-            // line 7
-            echo $this->env->getExtension('routing')->getPath("fos_js_routing_js", array("callback" => "fos.Router.setData"));
-            echo "\"></script>
-\t\t<script src=\"";
-            // line 8
-            echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/web/js/ajax.js"), "html", null, true);
-            echo "\" type=\"text/javascript\"></script>
-\t";
-        } else {
-            // asset "cccbafd"
-            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_cccbafd") : $this->env->getExtension('asset')->getAssetUrl("_controller/js/compiled/main.js");
-            // line 6
-            echo "\t\t<script src=\"";
-            echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/fosjsrouting/js/router.js"), "html", null, true);
-            echo "\"></script>
-\t\t<script src=\"";
-            // line 7
-            echo $this->env->getExtension('routing')->getPath("fos_js_routing_js", array("callback" => "fos.Router.setData"));
-            echo "\"></script>
-\t\t<script src=\"";
-            // line 8
-            echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/web/js/ajax.js"), "html", null, true);
-            echo "\" type=\"text/javascript\"></script>
-\t";
-        }
-        unset($context["asset_url"]);
-        // line 10
-        echo "
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/fosjsrouting/js/router.js"), "html", null, true);
+        echo "\"></script>
+\t<script src=\"";
+        // line 6
+        echo $this->env->getExtension('routing')->getPath("fos_js_routing_js", array("callback" => "fos.Router.setData"));
+        echo "\"></script>
+\t<script src=\"";
+        // line 7
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/web/js/ajax.js"), "html", null, true);
+        echo "\" type=\"text/javascript\"></script>
+
 \t<script>
 \t\tvar flag = false;
 \t\t\$(\"#dynamic_content\").on(\"change\", \"#dummy_player_image\", (function(evt) {
@@ -94,13 +69,13 @@ class __TwigTemplate_ba6ba391fa330ef1a4ac1344b708f01a0b145f7cfd779c0f02c2b9f0ed3
 \t\t\tvar url;
 \t\t\tif (idSource == \"edit_button\") {
 \t\t\t\turl = \"";
-        // line 22
+        // line 20
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ajaxEditDummyPlayer", array("dummyId" => $this->getAttribute((isset($context["dummy"]) ? $context["dummy"] : $this->getContext($context, "dummy")), "id", array()))), "html", null, true);
         echo "\";
 
 \t\t\t} else {
 \t\t\t\turl = \"";
-        // line 25
+        // line 23
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ajaxCancelDummyPlayer", array("dummyId" => $this->getAttribute((isset($context["dummy"]) ? $context["dummy"] : $this->getContext($context, "dummy")), "id", array()))), "html", null, true);
         echo "\";
 \t\t\t}
@@ -115,29 +90,29 @@ class __TwigTemplate_ba6ba391fa330ef1a4ac1344b708f01a0b145f7cfd779c0f02c2b9f0ed3
 
 ";
         
-        $__internal_8cc62aa9ed593f106b538b5f2d3d7a281ebdf54ce503e8860317f31505f55966->leave($__internal_8cc62aa9ed593f106b538b5f2d3d7a281ebdf54ce503e8860317f31505f55966_prof);
+        $__internal_2644dd78cb5b8f8d484d570eef157390ceb0c33a611dfbf3e9e0ed29cbe30b8c->leave($__internal_2644dd78cb5b8f8d484d570eef157390ceb0c33a611dfbf3e9e0ed29cbe30b8c_prof);
 
     }
 
-    // line 37
+    // line 35
     public function block_body($context, array $blocks = array())
     {
-        $__internal_e6b0f30523fb62da389cc8450745b081e51384a82594c20c145ae67d7f88891b = $this->env->getExtension("native_profiler");
-        $__internal_e6b0f30523fb62da389cc8450745b081e51384a82594c20c145ae67d7f88891b->enter($__internal_e6b0f30523fb62da389cc8450745b081e51384a82594c20c145ae67d7f88891b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_8fc57fd923ad6a138363690dac3774e0c1605f34262bc9bd2a5b4f253bbb9249 = $this->env->getExtension("native_profiler");
+        $__internal_8fc57fd923ad6a138363690dac3774e0c1605f34262bc9bd2a5b4f253bbb9249->enter($__internal_8fc57fd923ad6a138363690dac3774e0c1605f34262bc9bd2a5b4f253bbb9249_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 38
+        // line 36
         $context["profile"] = $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "get", array(0 => "profile"), "method");
-        // line 39
+        // line 37
         $context["idFriends"] = $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "get", array(0 => "idFriends"), "method");
-        // line 40
+        // line 38
         $context["showFavorite"] = true;
-        // line 41
+        // line 39
         echo "\t<div class=\"container rounded-box\">
 \t\t<div class=\"row\">
 \t\t\t<div class=\"col-md-4 col-md-offset-4 user-photo\">
 \t\t\t\t<img id=\"dummy_avatar\" src=
 \t\t\t\t";
-        // line 45
+        // line 43
         if ($this->getAttribute((isset($context["dummy"]) ? $context["dummy"] : $this->getContext($context, "dummy")), "image", array())) {
             echo "\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl(("bundles/web/img/dummy/" . $this->getAttribute((isset($context["dummy"]) ? $context["dummy"] : $this->getContext($context, "dummy")), "image", array()))), "html", null, true);
@@ -147,21 +122,21 @@ class __TwigTemplate_ba6ba391fa330ef1a4ac1344b708f01a0b145f7cfd779c0f02c2b9f0ed3
             echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/web/img/dummy/default.jpg"), "html", null, true);
             echo "\"";
         }
-        // line 46
+        // line 44
         echo "\t\t\t\t/><br />
 \t\t\t</div>
 \t\t</div>
 \t\t<br />
 \t\t<div id=\"dynamic_content\">
 \t\t\t";
-        // line 51
-        $this->loadTemplate("player/templates/showDummyPlayerInfo.html.twig", "player/viewDummyPlayer.html.twig", 51)->display(array_merge($context, array("dummy" => (isset($context["dummy"]) ? $context["dummy"] : $this->getContext($context, "dummy")))));
-        // line 52
+        // line 49
+        $this->loadTemplate("player/templates/showDummyPlayerInfo.html.twig", "player/viewDummyPlayer.html.twig", 49)->display(array_merge($context, array("dummy" => (isset($context["dummy"]) ? $context["dummy"] : $this->getContext($context, "dummy")))));
+        // line 50
         echo "\t\t</div>
 \t</div>
 ";
         
-        $__internal_e6b0f30523fb62da389cc8450745b081e51384a82594c20c145ae67d7f88891b->leave($__internal_e6b0f30523fb62da389cc8450745b081e51384a82594c20c145ae67d7f88891b_prof);
+        $__internal_8fc57fd923ad6a138363690dac3774e0c1605f34262bc9bd2a5b4f253bbb9249->leave($__internal_8fc57fd923ad6a138363690dac3774e0c1605f34262bc9bd2a5b4f253bbb9249_prof);
 
     }
 
@@ -177,18 +152,16 @@ class __TwigTemplate_ba6ba391fa330ef1a4ac1344b708f01a0b145f7cfd779c0f02c2b9f0ed3
 
     public function getDebugInfo()
     {
-        return array (  160 => 52,  158 => 51,  151 => 46,  141 => 45,  135 => 41,  133 => 40,  131 => 39,  129 => 38,  123 => 37,  104 => 25,  98 => 22,  84 => 10,  78 => 8,  74 => 7,  69 => 6,  62 => 8,  58 => 7,  53 => 6,  49 => 5,  44 => 4,  38 => 3,  31 => 1,  29 => 2,  11 => 1,);
+        return array (  135 => 50,  133 => 49,  126 => 44,  116 => 43,  110 => 39,  108 => 38,  106 => 37,  104 => 36,  98 => 35,  79 => 23,  73 => 20,  57 => 7,  53 => 6,  49 => 5,  44 => 4,  38 => 3,  31 => 1,  29 => 2,  11 => 1,);
     }
 }
 /* {% extends 'base/base.html.twig' %}*/
 /* {% set active = 4 %}*/
 /* {% block javascripts %}*/
 /* 	{{ parent() }}*/
-/* 	{% javascripts '@AppBundle/*' output='js/compiled/main.js' %}*/
-/* 		<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>*/
-/* 		<script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>*/
-/* 		<script src="{{ asset('bundles/web/js/ajax.js') }}" type="text/javascript"></script>*/
-/* 	{% endjavascripts %}*/
+/* 	<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>*/
+/* 	<script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>*/
+/* 	<script src="{{ asset('bundles/web/js/ajax.js') }}" type="text/javascript"></script>*/
 /* */
 /* 	<script>*/
 /* 		var flag = false;*/

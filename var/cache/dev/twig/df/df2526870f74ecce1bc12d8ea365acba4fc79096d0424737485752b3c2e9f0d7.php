@@ -22,23 +22,23 @@ class __TwigTemplate_28b2665d699af8d79f554f83038402674c3bbc4c45d0432d5ca70047880
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c3703ae382488f9a6f00ce96c2c5fa4eac417eb33313e4c671238d0de11ef23f = $this->env->getExtension("native_profiler");
-        $__internal_c3703ae382488f9a6f00ce96c2c5fa4eac417eb33313e4c671238d0de11ef23f->enter($__internal_c3703ae382488f9a6f00ce96c2c5fa4eac417eb33313e4c671238d0de11ef23f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "tournament/newTournament.html.twig"));
+        $__internal_e53c17e6e6fe26b8c5597a9d44ad970d83a9727105c4c3272f0e8bc5a2c617e5 = $this->env->getExtension("native_profiler");
+        $__internal_e53c17e6e6fe26b8c5597a9d44ad970d83a9727105c4c3272f0e8bc5a2c617e5->enter($__internal_e53c17e6e6fe26b8c5597a9d44ad970d83a9727105c4c3272f0e8bc5a2c617e5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "tournament/newTournament.html.twig"));
 
         // line 2
         $context["active"] = 2;
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_c3703ae382488f9a6f00ce96c2c5fa4eac417eb33313e4c671238d0de11ef23f->leave($__internal_c3703ae382488f9a6f00ce96c2c5fa4eac417eb33313e4c671238d0de11ef23f_prof);
+        $__internal_e53c17e6e6fe26b8c5597a9d44ad970d83a9727105c4c3272f0e8bc5a2c617e5->leave($__internal_e53c17e6e6fe26b8c5597a9d44ad970d83a9727105c4c3272f0e8bc5a2c617e5_prof);
 
     }
 
     // line 3
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_36d36f059349f9e221216857e00f14dac835bd73e02fd911803b716c03af70e7 = $this->env->getExtension("native_profiler");
-        $__internal_36d36f059349f9e221216857e00f14dac835bd73e02fd911803b716c03af70e7->enter($__internal_36d36f059349f9e221216857e00f14dac835bd73e02fd911803b716c03af70e7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_f1d8b67b365e163133b746307e63aaf2fa2a7f27a610ff3279e57c1c6f63b1f2 = $this->env->getExtension("native_profiler");
+        $__internal_f1d8b67b365e163133b746307e63aaf2fa2a7f27a610ff3279e57c1c6f63b1f2->enter($__internal_f1d8b67b365e163133b746307e63aaf2fa2a7f27a610ff3279e57c1c6f63b1f2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 4
         echo "\t";
@@ -53,27 +53,11 @@ class __TwigTemplate_28b2665d699af8d79f554f83038402674c3bbc4c45d0432d5ca70047880
         echo $this->env->getExtension('routing')->getPath("fos_js_routing_js", array("callback" => "fos.Router.setData"));
         echo "\"></script>
 \t<script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.js\"></script>
-\t";
+\t<script src=\"";
         // line 8
-        if (isset($context['assetic']['debug']) && $context['assetic']['debug']) {
-            // asset "cccbafd_0"
-            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_cccbafd_0") : $this->env->getExtension('asset')->getAssetUrl("_controller/js/compiled/main_part_1_AppBundle_1.js");
-            // line 9
-            echo "\t\t<script src=\"";
-            echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/web/js/ajax.js"), "html", null, true);
-            echo "\" type=\"text/javascript\"></script>
-\t";
-        } else {
-            // asset "cccbafd"
-            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_cccbafd") : $this->env->getExtension('asset')->getAssetUrl("_controller/js/compiled/main.js");
-            echo "\t\t<script src=\"";
-            echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/web/js/ajax.js"), "html", null, true);
-            echo "\" type=\"text/javascript\"></script>
-\t";
-        }
-        unset($context["asset_url"]);
-        // line 11
-        echo "\t
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/web/js/ajax.js"), "html", null, true);
+        echo "\" type=\"text/javascript\"></script>
+\t
 \t<script>
 \t\tvar optionsIndividual = {
 \t\t\t\"4 Players\": \"4\",
@@ -242,33 +226,33 @@ class __TwigTemplate_28b2665d699af8d79f554f83038402674c3bbc4c45d0432d5ca70047880
 
 ";
         
-        $__internal_36d36f059349f9e221216857e00f14dac835bd73e02fd911803b716c03af70e7->leave($__internal_36d36f059349f9e221216857e00f14dac835bd73e02fd911803b716c03af70e7_prof);
+        $__internal_f1d8b67b365e163133b746307e63aaf2fa2a7f27a610ff3279e57c1c6f63b1f2->leave($__internal_f1d8b67b365e163133b746307e63aaf2fa2a7f27a610ff3279e57c1c6f63b1f2_prof);
 
     }
 
-    // line 179
+    // line 177
     public function block_body($context, array $blocks = array())
     {
-        $__internal_cfca55cb3c292ed7ebc983a2fc197e1399e06183f8ec7edfa1550eeee95d6429 = $this->env->getExtension("native_profiler");
-        $__internal_cfca55cb3c292ed7ebc983a2fc197e1399e06183f8ec7edfa1550eeee95d6429->enter($__internal_cfca55cb3c292ed7ebc983a2fc197e1399e06183f8ec7edfa1550eeee95d6429_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_a027423253f6560f5d394455b51ed279c4ccb9dc1eea43165015cd2502f981d3 = $this->env->getExtension("native_profiler");
+        $__internal_a027423253f6560f5d394455b51ed279c4ccb9dc1eea43165015cd2502f981d3->enter($__internal_a027423253f6560f5d394455b51ed279c4ccb9dc1eea43165015cd2502f981d3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 180
+        // line 178
         echo "
 \t<div class=\"container rounded-box\">
 \t\t";
-        // line 182
+        // line 180
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
         echo "
 \t\t\t<div class=\"row\">
 \t\t\t\t<div class=\"col-md-1 col-md-offset-4\">
 \t\t\t\t\t";
-        // line 185
+        // line 183
         echo $this->env->getExtension('translator')->getTranslator()->trans("Name", array(), "messages");
-        // line 186
+        // line 184
         echo "\t\t\t\t</div>
 \t\t\t\t<div class=\"col-md-3\">
 \t\t\t\t\t";
-        // line 188
+        // line 186
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "name", array()), 'widget');
         echo "
 \t\t\t\t</div>
@@ -276,13 +260,13 @@ class __TwigTemplate_28b2665d699af8d79f554f83038402674c3bbc4c45d0432d5ca70047880
 \t\t\t<div class=\"row\">
 \t\t\t\t<div class=\"col-md-1 col-md-offset-4\">
 \t\t\t\t\t";
-        // line 193
+        // line 191
         echo $this->env->getExtension('translator')->getTranslator()->trans("Date", array(), "messages");
-        // line 194
+        // line 192
         echo "\t\t\t\t</div>
 \t\t\t\t<div class=\"col-md-3\">
 \t\t\t\t\t";
-        // line 196
+        // line 194
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "date", array()), 'widget');
         echo "
 \t\t\t\t</div>
@@ -290,13 +274,13 @@ class __TwigTemplate_28b2665d699af8d79f554f83038402674c3bbc4c45d0432d5ca70047880
 \t\t\t<div class=\"row\">
 \t\t\t\t<div class=\"col-md-1 col-md-offset-4\">
 \t\t\t\t\t";
-        // line 201
+        // line 199
         echo $this->env->getExtension('translator')->getTranslator()->trans("Club", array(), "messages");
-        // line 202
+        // line 200
         echo "\t\t\t\t</div>
 \t\t\t\t<div class=\"col-md-3\">
 \t\t\t\t\t";
-        // line 204
+        // line 202
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "club", array()), 'widget');
         echo "
 \t\t\t\t</div>
@@ -304,13 +288,13 @@ class __TwigTemplate_28b2665d699af8d79f554f83038402674c3bbc4c45d0432d5ca70047880
 \t\t\t<div class=\"row\">
 \t\t\t\t<div class=\"col-md-1 col-md-offset-4\">
 \t\t\t\t\t";
-        // line 209
+        // line 207
         echo $this->env->getExtension('translator')->getTranslator()->trans("Score", array(), "messages");
-        // line 210
+        // line 208
         echo "\t\t\t\t</div>
 \t\t\t\t<div class=\"col-md-3\">
 \t\t\t\t\t";
-        // line 212
+        // line 210
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "scoring", array()), 'widget');
         echo "
 \t\t\t\t</div>
@@ -318,13 +302,13 @@ class __TwigTemplate_28b2665d699af8d79f554f83038402674c3bbc4c45d0432d5ca70047880
 \t\t\t<div class=\"row\">
 \t\t\t\t<div class=\"col-md-1 col-md-offset-4\">
 \t\t\t\t\t";
-        // line 217
+        // line 215
         echo $this->env->getExtension('translator')->getTranslator()->trans("Type", array(), "messages");
-        // line 218
+        // line 216
         echo "\t\t\t\t</div>
 \t\t\t\t<div class=\"col-md-3\">
 \t\t\t\t\t";
-        // line 220
+        // line 218
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "type", array()), 'widget');
         echo "
 \t\t\t\t</div>
@@ -332,13 +316,13 @@ class __TwigTemplate_28b2665d699af8d79f554f83038402674c3bbc4c45d0432d5ca70047880
 \t\t\t<div class=\"row\">
 \t\t\t\t<div class=\"col-md-1 col-md-offset-4\">
 \t\t\t\t\t";
-        // line 225
+        // line 223
         echo $this->env->getExtension('translator')->getTranslator()->trans("Players", array(), "messages");
-        // line 226
+        // line 224
         echo "\t\t\t\t</div>
 \t\t\t\t<div class=\"col-md-3\">
 \t\t\t\t\t";
-        // line 228
+        // line 226
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "playersCourts", array()), 'widget');
         echo "
 \t\t\t\t</div>
@@ -346,7 +330,7 @@ class __TwigTemplate_28b2665d699af8d79f554f83038402674c3bbc4c45d0432d5ca70047880
 \t\t\t<div class=\"row\">
 \t\t\t\t<div class=\"col-md-3 col-md-offset-5\">
 \t\t\t\t\t<ul id=\"sortable\" data-prototype=\"";
-        // line 233
+        // line 231
         echo twig_escape_filter($this->env, $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "players", array()), "vars", array()), "prototype", array()), "player", array()), 'widget'), "html_attr");
         echo "\">
 \t\t\t\t\t</ul>
@@ -359,7 +343,7 @@ class __TwigTemplate_28b2665d699af8d79f554f83038402674c3bbc4c45d0432d5ca70047880
 \t\t\t\t<div class=\"col-md-3\">
 \t\t\t\t\t<button type=\"button\" onclick=\"addSpectator()\">Add Spectator</button>
 \t\t\t\t\t<div id=\"spectators_container\" data-prototype=\"";
-        // line 243
+        // line 241
         echo twig_escape_filter($this->env, $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "spectators", array()), "vars", array()), "prototype", array()), "player", array()), 'widget'), "html_attr");
         echo "\">
 \t\t\t\t\t</div>
@@ -368,22 +352,22 @@ class __TwigTemplate_28b2665d699af8d79f554f83038402674c3bbc4c45d0432d5ca70047880
 \t\t\t<div class=\"row\">
 \t\t\t\t<div class=\"col-md-4 col-md-offset-4\">
 \t\t\t\t\t<button id=\"saveTournament\" type=\"submit\" class=\"button\">";
-        // line 249
+        // line 247
         echo $this->env->getExtension('translator')->getTranslator()->trans("Save Tournament", array(), "messages");
         echo "</button>
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t\t";
-        // line 252
+        // line 250
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "_token", array()), 'widget');
         echo "
 \t\t";
-        // line 253
+        // line 251
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end', array("render_rest" => false));
         echo "
 ";
         
-        $__internal_cfca55cb3c292ed7ebc983a2fc197e1399e06183f8ec7edfa1550eeee95d6429->leave($__internal_cfca55cb3c292ed7ebc983a2fc197e1399e06183f8ec7edfa1550eeee95d6429_prof);
+        $__internal_a027423253f6560f5d394455b51ed279c4ccb9dc1eea43165015cd2502f981d3->leave($__internal_a027423253f6560f5d394455b51ed279c4ccb9dc1eea43165015cd2502f981d3_prof);
 
     }
 
@@ -399,7 +383,7 @@ class __TwigTemplate_28b2665d699af8d79f554f83038402674c3bbc4c45d0432d5ca70047880
 
     public function getDebugInfo()
     {
-        return array (  382 => 253,  378 => 252,  372 => 249,  363 => 243,  350 => 233,  342 => 228,  338 => 226,  336 => 225,  328 => 220,  324 => 218,  322 => 217,  314 => 212,  310 => 210,  308 => 209,  300 => 204,  296 => 202,  294 => 201,  286 => 196,  282 => 194,  280 => 193,  272 => 188,  268 => 186,  266 => 185,  260 => 182,  256 => 180,  250 => 179,  76 => 11,  62 => 9,  58 => 8,  53 => 6,  49 => 5,  44 => 4,  38 => 3,  31 => 1,  29 => 2,  11 => 1,);
+        return array (  366 => 251,  362 => 250,  356 => 247,  347 => 241,  334 => 231,  326 => 226,  322 => 224,  320 => 223,  312 => 218,  308 => 216,  306 => 215,  298 => 210,  294 => 208,  292 => 207,  284 => 202,  280 => 200,  278 => 199,  270 => 194,  266 => 192,  264 => 191,  256 => 186,  252 => 184,  250 => 183,  244 => 180,  240 => 178,  234 => 177,  58 => 8,  53 => 6,  49 => 5,  44 => 4,  38 => 3,  31 => 1,  29 => 2,  11 => 1,);
     }
 }
 /* {% extends 'base/base.html.twig' %}*/
@@ -409,9 +393,7 @@ class __TwigTemplate_28b2665d699af8d79f554f83038402674c3bbc4c45d0432d5ca70047880
 /* 	<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>*/
 /* 	<script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>*/
 /* 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*/
-/* 	{% javascripts '@AppBundle/*' output='js/compiled/main.js' %}*/
-/* 		<script src="{{ asset('bundles/web/js/ajax.js') }}" type="text/javascript"></script>*/
-/* 	{% endjavascripts %}*/
+/* 	<script src="{{ asset('bundles/web/js/ajax.js') }}" type="text/javascript"></script>*/
 /* 	*/
 /* 	<script>*/
 /* 		var optionsIndividual = {*/

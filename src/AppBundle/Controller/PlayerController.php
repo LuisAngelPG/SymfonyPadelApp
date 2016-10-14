@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Entity\TournamentClub;
-use AppBundle\Entity\DummyPlayer;
+use AppBundle\Entity\UserProfilePlayerprofile;
 use AppBundle\Form\ClubType;
 use AppBundle\Form\DummyPlayerType;
 use AppBundle\Controller\HTMLMakerController as HTML;
@@ -40,7 +40,7 @@ class PlayerController extends Controller {
     }
 
     private function dummyPlayers() {
-        $repository = $this->getDoctrine()->getRepository('AppBundle:DummyPlayer');
+        $repository = $this->getDoctrine()->getRepository('AppBundle:UserProfilePlayerprofile');
         $profile = $this->get('session')->get('profile');
         $dummyPlayers = $repository->findByCreator($profile);
         return $dummyPlayers;
@@ -107,7 +107,7 @@ class PlayerController extends Controller {
     */
     public function addDummyPlayer(Request $request) {
 
-        $dummy = new DummyPlayer();
+        $dummy = new UserProfilePlayerprofile();
         $form = $this->createForm(DummyPlayerType::class, $dummy);
 
         $form->handleRequest($request);
@@ -126,7 +126,7 @@ class PlayerController extends Controller {
     * @Route("/player/viewDummyPlayer/{dummyId}", name="viewDummyPlayer")
     */
     public function viewDummyPlayer(Request $request, $dummyId) {
-        $repository = $this->getDoctrine()->getRepository('AppBundle:DummyPlayer');
+        $repository = $this->getDoctrine()->getRepository('AppBundle:UserProfilePlayerprofile');
         $dummy = $repository->findOneById($dummyId);
 
         return $this->render('player/viewDummyPlayer.html.twig',  array('dummy' => $dummy));
@@ -150,7 +150,7 @@ class PlayerController extends Controller {
     * @Route("/player/ajaxEditDummyPlayer/{dummyId}", name="ajaxEditDummyPlayer")
     */
     public function ajaxEditDummyPlayer(Request $request, $dummyId) {
-        $repository = $this->getDoctrine()->getRepository('AppBundle:DummyPlayer');
+        $repository = $this->getDoctrine()->getRepository('AppBundle:UserProfilePlayerprofile');
         $dummy = $repository->findOneById($dummyId);
         $form = $this->createForm(DummyPlayerType::class, $dummy);
         $form->handleRequest($request);
@@ -167,7 +167,7 @@ class PlayerController extends Controller {
     * @Route("/club/ajaxCancelDummyPlayer/{dummyId}", name="ajaxCancelDummyPlayer")
     */
     public function ajaxCancelDummyPlayer(Request $request, $dummyId) {
-        $repository = $this->getDoctrine()->getRepository('AppBundle:DummyPlayer');
+        $repository = $this->getDoctrine()->getRepository('AppBundle:UserProfilePlayerprofile');
         $dummy = $repository->findOneById($dummyId);
         return $this->render('/player/templates/showDummyPlayerInfo.html.twig', array('dummy' => $dummy)); 
     }
@@ -175,15 +175,16 @@ class PlayerController extends Controller {
     private function addDummy($dummy, $form) {
         $repository = $this->getDoctrine()->getRepository('AppBundle:UserProfilePlayerprofile');
         $profile = $repository->findOneByUser($this->getUser());
+        $dummy->setNulls();
         $dummy->setCreator($profile);
-
+        $dummy->setIsDummy(true);
         $dummyImage = $dummy->getImage();
         $oldPathImage = $form->get("oldPathImage")->getData();
         $oldPathImage = substr($oldPathImage, 44);
         if ($dummyImage != null) {
             $dummy->setImage($this->updateDummyPic($dummyImage, $oldPathImage));
         } else {        
-            $dummyImage->setImage($oldPathImage);
+            $dummy->setImage($oldPathImage);
         }
 
         $em = $this->getDoctrine()->getManager();

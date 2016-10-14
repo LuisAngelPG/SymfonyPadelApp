@@ -64,10 +64,10 @@ class UserProfilePlayerprofile extends \AppBundle\Entity\UserProfilePlayerprofil
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'age', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'nationality', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'phoneNumber', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'level', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'equipmentModel', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'isTrainer', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'isDummy', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'created', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'updated', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'user', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'equipment', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'favClubs', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'friendsWithMe', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'myFriends', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'idFavClubs', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'idFriends'];
+            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'age', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'nationality', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'phoneNumber', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'level', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'equipmentModel', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'isTrainer', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'isDummy', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'creator', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'user', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'equipment', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'favClubs', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'friendsWithMe', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'myFriends', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'idFavClubs', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'idFriends'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'age', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'nationality', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'phoneNumber', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'level', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'equipmentModel', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'isTrainer', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'isDummy', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'created', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'updated', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'user', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'equipment', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'favClubs', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'friendsWithMe', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'myFriends', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'idFavClubs', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'idFriends'];
+        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'age', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'nationality', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'phoneNumber', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'level', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'equipmentModel', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'isTrainer', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'isDummy', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'creator', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'user', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'equipment', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'favClubs', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'friendsWithMe', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'myFriends', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'idFavClubs', '' . "\0" . 'AppBundle\\Entity\\UserProfilePlayerprofile' . "\0" . 'idFriends'];
     }
 
     /**
@@ -582,6 +582,28 @@ class UserProfilePlayerprofile extends \AppBundle\Entity\UserProfilePlayerprofil
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMyFriends', []);
 
         return parent::getMyFriends();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setCreator(\AppBundle\Entity\UserProfilePlayerprofile $creator = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCreator', [$creator]);
+
+        return parent::setCreator($creator);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getCreator()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCreator', []);
+
+        return parent::getCreator();
     }
 
     /**

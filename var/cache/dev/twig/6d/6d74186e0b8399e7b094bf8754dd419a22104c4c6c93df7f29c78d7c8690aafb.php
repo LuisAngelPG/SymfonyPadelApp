@@ -15,8 +15,8 @@ class __TwigTemplate_786ceef8903de141518df7c6db10c3c864f517fc6ae66faa3bf0922130f
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_4f608c7ac7ddf6a2a435cfc702c73afc119c530971cd4a4ffdfdd00c57ec0912 = $this->env->getExtension("native_profiler");
-        $__internal_4f608c7ac7ddf6a2a435cfc702c73afc119c530971cd4a4ffdfdd00c57ec0912->enter($__internal_4f608c7ac7ddf6a2a435cfc702c73afc119c530971cd4a4ffdfdd00c57ec0912_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "/club/templates/editClubInfo.html.twig"));
+        $__internal_642eefa90bbbb7c86c4ed9c70092a04e12c615803f35100a685dd97eebb4082c = $this->env->getExtension("native_profiler");
+        $__internal_642eefa90bbbb7c86c4ed9c70092a04e12c615803f35100a685dd97eebb4082c->enter($__internal_642eefa90bbbb7c86c4ed9c70092a04e12c615803f35100a685dd97eebb4082c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "/club/templates/editClubInfo.html.twig"));
 
         // line 1
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("action" => $this->env->getExtension('routing')->getPath("clubAjaxEdit", array("clubId" => (isset($context["id"]) ? $context["id"] : $this->getContext($context, "id"))))));
@@ -500,7 +500,7 @@ class __TwigTemplate_786ceef8903de141518df7c6db10c3c864f517fc6ae66faa3bf0922130f
 \t<div class=\"col-md-4 col-md-offset-4\">
 \t\t<button type=\"button\" class=\"btn btn-info\" data-toggle=\"collapse\" data-target=\"#club_webs\">";
         // line 281
-        echo $this->env->getExtension('translator')->getTranslator()->trans("Club's Data", array(), "messages");
+        echo $this->env->getExtension('translator')->getTranslator()->trans("Web", array(), "messages");
         echo "</button>
 \t\t<br /><br />
 \t</div>
@@ -690,9 +690,13 @@ class __TwigTemplate_786ceef8903de141518df7c6db10c3c864f517fc6ae66faa3bf0922130f
 </div>
 ";
         // line 384
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "_token", array()), 'widget');
+        echo "
+";
+        // line 385
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end', array("render_rest" => false));
         
-        $__internal_4f608c7ac7ddf6a2a435cfc702c73afc119c530971cd4a4ffdfdd00c57ec0912->leave($__internal_4f608c7ac7ddf6a2a435cfc702c73afc119c530971cd4a4ffdfdd00c57ec0912_prof);
+        $__internal_642eefa90bbbb7c86c4ed9c70092a04e12c615803f35100a685dd97eebb4082c->leave($__internal_642eefa90bbbb7c86c4ed9c70092a04e12c615803f35100a685dd97eebb4082c_prof);
 
     }
 
@@ -708,7 +712,7 @@ class __TwigTemplate_786ceef8903de141518df7c6db10c3c864f517fc6ae66faa3bf0922130f
 
     public function getDebugInfo()
     {
-        return array (  693 => 384,  686 => 380,  682 => 379,  673 => 372,  667 => 370,  662 => 368,  658 => 367,  654 => 365,  652 => 364,  646 => 360,  640 => 358,  635 => 356,  631 => 355,  627 => 353,  625 => 352,  618 => 347,  612 => 345,  607 => 343,  603 => 342,  599 => 340,  597 => 339,  586 => 331,  576 => 324,  572 => 322,  570 => 321,  562 => 316,  558 => 314,  556 => 313,  548 => 308,  544 => 306,  542 => 305,  534 => 300,  530 => 298,  528 => 297,  520 => 292,  516 => 290,  514 => 289,  503 => 281,  493 => 274,  489 => 272,  487 => 271,  479 => 266,  475 => 264,  473 => 263,  465 => 258,  461 => 256,  459 => 255,  451 => 250,  447 => 248,  445 => 247,  437 => 242,  433 => 240,  431 => 239,  423 => 234,  419 => 232,  417 => 231,  409 => 226,  405 => 224,  403 => 223,  395 => 218,  391 => 216,  389 => 215,  381 => 210,  377 => 208,  375 => 207,  367 => 202,  363 => 200,  361 => 199,  353 => 194,  349 => 192,  347 => 191,  339 => 186,  335 => 184,  333 => 183,  325 => 178,  321 => 176,  319 => 175,  311 => 170,  307 => 168,  305 => 167,  297 => 162,  293 => 160,  291 => 159,  283 => 154,  279 => 152,  277 => 151,  269 => 146,  265 => 144,  263 => 143,  255 => 138,  251 => 136,  249 => 135,  241 => 130,  237 => 128,  235 => 127,  227 => 122,  223 => 120,  221 => 119,  213 => 114,  209 => 112,  207 => 111,  199 => 106,  195 => 104,  193 => 103,  185 => 98,  181 => 96,  179 => 95,  171 => 90,  167 => 88,  165 => 87,  157 => 82,  153 => 80,  151 => 79,  143 => 74,  139 => 72,  137 => 71,  126 => 63,  116 => 56,  112 => 54,  110 => 53,  102 => 48,  98 => 46,  96 => 45,  88 => 40,  84 => 38,  82 => 37,  74 => 32,  70 => 30,  68 => 29,  60 => 24,  56 => 22,  54 => 21,  43 => 13,  34 => 7,  29 => 5,  22 => 1,);
+        return array (  697 => 385,  693 => 384,  686 => 380,  682 => 379,  673 => 372,  667 => 370,  662 => 368,  658 => 367,  654 => 365,  652 => 364,  646 => 360,  640 => 358,  635 => 356,  631 => 355,  627 => 353,  625 => 352,  618 => 347,  612 => 345,  607 => 343,  603 => 342,  599 => 340,  597 => 339,  586 => 331,  576 => 324,  572 => 322,  570 => 321,  562 => 316,  558 => 314,  556 => 313,  548 => 308,  544 => 306,  542 => 305,  534 => 300,  530 => 298,  528 => 297,  520 => 292,  516 => 290,  514 => 289,  503 => 281,  493 => 274,  489 => 272,  487 => 271,  479 => 266,  475 => 264,  473 => 263,  465 => 258,  461 => 256,  459 => 255,  451 => 250,  447 => 248,  445 => 247,  437 => 242,  433 => 240,  431 => 239,  423 => 234,  419 => 232,  417 => 231,  409 => 226,  405 => 224,  403 => 223,  395 => 218,  391 => 216,  389 => 215,  381 => 210,  377 => 208,  375 => 207,  367 => 202,  363 => 200,  361 => 199,  353 => 194,  349 => 192,  347 => 191,  339 => 186,  335 => 184,  333 => 183,  325 => 178,  321 => 176,  319 => 175,  311 => 170,  307 => 168,  305 => 167,  297 => 162,  293 => 160,  291 => 159,  283 => 154,  279 => 152,  277 => 151,  269 => 146,  265 => 144,  263 => 143,  255 => 138,  251 => 136,  249 => 135,  241 => 130,  237 => 128,  235 => 127,  227 => 122,  223 => 120,  221 => 119,  213 => 114,  209 => 112,  207 => 111,  199 => 106,  195 => 104,  193 => 103,  185 => 98,  181 => 96,  179 => 95,  171 => 90,  167 => 88,  165 => 87,  157 => 82,  153 => 80,  151 => 79,  143 => 74,  139 => 72,  137 => 71,  126 => 63,  116 => 56,  112 => 54,  110 => 53,  102 => 48,  98 => 46,  96 => 45,  88 => 40,  84 => 38,  82 => 37,  74 => 32,  70 => 30,  68 => 29,  60 => 24,  56 => 22,  54 => 21,  43 => 13,  34 => 7,  29 => 5,  22 => 1,);
     }
 }
 /* {{ form_start(form, {'action': path('clubAjaxEdit', {'clubId': id})}) }}*/
@@ -991,7 +995,7 @@ class __TwigTemplate_786ceef8903de141518df7c6db10c3c864f517fc6ae66faa3bf0922130f
 /* */
 /* <div class="row">*/
 /* 	<div class="col-md-4 col-md-offset-4">*/
-/* 		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#club_webs">{% trans %}Club's Data{% endtrans %}</button>*/
+/* 		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#club_webs">{% trans %}Web{% endtrans %}</button>*/
 /* 		<br /><br />*/
 /* 	</div>*/
 /* </div>*/
@@ -1094,4 +1098,5 @@ class __TwigTemplate_786ceef8903de141518df7c6db10c3c864f517fc6ae66faa3bf0922130f
 /* 		</div>*/
 /* 	</div>*/
 /* </div>*/
+/* {{ form_widget(form._token) }}*/
 /* {{ form_end(form, {'render_rest': false}) }}*/

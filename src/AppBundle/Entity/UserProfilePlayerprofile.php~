@@ -14,15 +14,8 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table(name="user_profile_playerprofile", uniqueConstraints={@ORM\UniqueConstraint(name="user_profile_playerprofile_user_id_key", columns={"user_id"})}, indexes={@ORM\Index(name="user_profile_playerprofile_288bb964", columns={"equipment_id"}), @ORM\Index(name="user_profile_playerprofile_phone_number_291c576a9932b0a5_uniq", columns={"phone_number"})})
  * @ORM\Entity
  */
-class UserProfilePlayerprofile
+class UserProfilePlayerprofile extends Player
 {
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=250, nullable=false)
-     */
-    private $name;
 
     /**
      * @var integer
@@ -55,13 +48,6 @@ class UserProfilePlayerprofile
     /**
      * @var string
      *
-     * @ORM\Column(name="gender", type="string", length=6, nullable=true)
-     */
-    private $gender;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="equipment_model", type="string", length=250, nullable=true)
      */
     private $equipmentModel;
@@ -81,27 +67,25 @@ class UserProfilePlayerprofile
     private $isDummy;
 
     /**
+     * @ORM\OneToOne(targetEntity="UserProfilePlayerprofile")
+     * @ORM\JoinColumn(name="creator_id", referencedColumnName="id")
+     */
+    private $creator;
+/*
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="created", type="datetimetz", nullable=true)
-     */
+     
     private $created;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="updated", type="datetimetz", nullable=true)
-     */
+     
     private $updated;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="image", type="string", length=100, nullable=true)
-     * @Assert\File(mimeTypes={ "image/jpeg", "image/png" })
-     */
-    private $image;
-
+*/
     /**
      * @var integer
      *
@@ -167,30 +151,7 @@ class UserProfilePlayerprofile
         $this->setUpdated($date);
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return UserProfilePlayerprofile
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
+  
     /**
      * Set age
      *
@@ -287,29 +248,6 @@ class UserProfilePlayerprofile
         return $this->level;
     }
 
-    /**
-     * Set gender
-     *
-     * @param string $gender
-     *
-     * @return UserProfilePlayerprofile
-     */
-    public function setGender($gender)
-    {
-        $this->gender = $gender;
-
-        return $this;
-    }
-
-    /**
-     * Get gender
-     *
-     * @return string
-     */
-    public function getGender()
-    {
-        return $this->gender;
-    }
 
     /**
      * Set equipmentModel
@@ -431,29 +369,7 @@ class UserProfilePlayerprofile
         return $this->updated;
     }
 
-    /**
-     * Set image
-     *
-     * @param string $image
-     *
-     * @return UserProfilePlayerprofile
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return string
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
+   
 
     /**
      * Get id

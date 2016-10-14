@@ -62,15 +62,16 @@
 		{{tournament.localClubName}}
 	</div>
 </div>
+
 {% for round in rounds %}
 	Round: {{round.number}} <br>
 	{% for match in round.matches %}
 		Court: {{match.court}}<br>
-		Team 1: <br>
+		Team 1: Score: {{ match.scoreOne }}<br>
 		{% for player in match.teamOne %}
 			{{ player.playerProfile.name }}<br>
 		{% endfor %}
-		Team 2: <br>
+		Team 2: Score: {{ match.scoreTwo }}<br>
 		{% for player in match.teamTwo %}
 			{{ player.playerProfile.name }}<br>
 		{% endfor %}

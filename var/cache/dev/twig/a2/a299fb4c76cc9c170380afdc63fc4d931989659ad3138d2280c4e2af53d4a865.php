@@ -22,58 +22,37 @@ class __TwigTemplate_7cd071347684b1af965ee16ae5d84de145c089f41adfd72878aad2eec4e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_20a1da0fe90dacc8d35735804a353934fa9616a9c787cd671d164746a65bd1e2 = $this->env->getExtension("native_profiler");
-        $__internal_20a1da0fe90dacc8d35735804a353934fa9616a9c787cd671d164746a65bd1e2->enter($__internal_20a1da0fe90dacc8d35735804a353934fa9616a9c787cd671d164746a65bd1e2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "club/viewClub.html.twig"));
+        $__internal_a60ea583421864d6e4a243025ebc2bd48b7e1fab3db5e14c7040d4dd81288aa0 = $this->env->getExtension("native_profiler");
+        $__internal_a60ea583421864d6e4a243025ebc2bd48b7e1fab3db5e14c7040d4dd81288aa0->enter($__internal_a60ea583421864d6e4a243025ebc2bd48b7e1fab3db5e14c7040d4dd81288aa0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "club/viewClub.html.twig"));
 
         // line 2
         $context["active"] = 3;
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_20a1da0fe90dacc8d35735804a353934fa9616a9c787cd671d164746a65bd1e2->leave($__internal_20a1da0fe90dacc8d35735804a353934fa9616a9c787cd671d164746a65bd1e2_prof);
+        $__internal_a60ea583421864d6e4a243025ebc2bd48b7e1fab3db5e14c7040d4dd81288aa0->leave($__internal_a60ea583421864d6e4a243025ebc2bd48b7e1fab3db5e14c7040d4dd81288aa0_prof);
 
     }
 
     // line 3
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_0d1cc02fc0a682ef61d4c0829913e7088d8bb6404aaf0375a1d88e38d0c1b8f8 = $this->env->getExtension("native_profiler");
-        $__internal_0d1cc02fc0a682ef61d4c0829913e7088d8bb6404aaf0375a1d88e38d0c1b8f8->enter($__internal_0d1cc02fc0a682ef61d4c0829913e7088d8bb6404aaf0375a1d88e38d0c1b8f8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_bc07eec68dd01a552e6155b5e79abf412b8cb4b3d1177b4d9491c52fd120416e = $this->env->getExtension("native_profiler");
+        $__internal_bc07eec68dd01a552e6155b5e79abf412b8cb4b3d1177b4d9491c52fd120416e->enter($__internal_bc07eec68dd01a552e6155b5e79abf412b8cb4b3d1177b4d9491c52fd120416e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 4
         echo "\t";
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
-\t";
+\t<script src=\"";
         // line 5
-        if (isset($context['assetic']['debug']) && $context['assetic']['debug']) {
-            // asset "cccbafd_0"
-            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_cccbafd_0") : $this->env->getExtension('asset')->getAssetUrl("_controller/js/compiled/main_part_1_AppBundle_1.js");
-            // line 6
-            echo "\t<script src=\"";
-            echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/web/js/ajax.js"), "html", null, true);
-            echo "\" type=\"text/javascript\"></script>
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/web/js/ajax.js"), "html", null, true);
+        echo "\" type=\"text/javascript\"></script>
 \t<script src=\"";
-            // line 7
-            echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/web/js/libs/googleMaps.js"), "html", null, true);
-            echo "\" type=\"text/javascript\"></script>
-";
-        } else {
-            // asset "cccbafd"
-            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_cccbafd") : $this->env->getExtension('asset')->getAssetUrl("_controller/js/compiled/main.js");
-            // line 6
-            echo "\t<script src=\"";
-            echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/web/js/ajax.js"), "html", null, true);
-            echo "\" type=\"text/javascript\"></script>
-\t<script src=\"";
-            // line 7
-            echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/web/js/libs/googleMaps.js"), "html", null, true);
-            echo "\" type=\"text/javascript\"></script>
-";
-        }
-        unset($context["asset_url"]);
-        // line 9
-        echo "
+        // line 6
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/web/js/libs/googleMaps.js"), "html", null, true);
+        echo "\" type=\"text/javascript\"></script>
+
 
 \t<script>
 \t\tvar flag = false;
@@ -90,13 +69,13 @@ class __TwigTemplate_7cd071347684b1af965ee16ae5d84de145c089f41adfd72878aad2eec4e
 \t\t\tvar url;
 \t\t\tif (idSource == \"edit_button\") {
 \t\t\t\turl = \"";
-        // line 25
+        // line 23
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ajaxClubEdit", array("clubId" => $this->getAttribute((isset($context["club"]) ? $context["club"] : $this->getContext($context, "club")), "id", array()))), "html", null, true);
         echo "\";
 
 \t\t\t} else {
 \t\t\t\turl = \"";
-        // line 28
+        // line 26
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ajaxClubCancel", array("clubId" => $this->getAttribute((isset($context["club"]) ? $context["club"] : $this->getContext($context, "club")), "id", array()))), "html", null, true);
         echo "\";
 \t\t\t}
@@ -109,7 +88,7 @@ class __TwigTemplate_7cd071347684b1af965ee16ae5d84de145c089f41adfd72878aad2eec4e
 
  \t\t\$(\"#fav\").click(function(){
 \t\t\tvar url = \"";
-        // line 38
+        // line 36
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ajaxClubFav", array("clubId" => $this->getAttribute((isset($context["club"]) ? $context["club"] : $this->getContext($context, "club")), "id", array()))), "html", null, true);
         echo "\";
 \t\t\t\$.ajax({url: url, success: function(result) {
@@ -118,7 +97,7 @@ class __TwigTemplate_7cd071347684b1af965ee16ae5d84de145c089f41adfd72878aad2eec4e
 
  \t\t\$(\"#unFav\").click(function() {
 \t\t\tvar url = \"";
-        // line 44
+        // line 42
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("ajaxRemoveFavClub", array("clubId" => $this->getAttribute((isset($context["club"]) ? $context["club"] : $this->getContext($context, "club")), "id", array()))), "html", null, true);
         echo "\";
 \t\t\t\$.ajax({url: url, success: function(result) {
@@ -128,30 +107,30 @@ class __TwigTemplate_7cd071347684b1af965ee16ae5d84de145c089f41adfd72878aad2eec4e
 
 ";
         
-        $__internal_0d1cc02fc0a682ef61d4c0829913e7088d8bb6404aaf0375a1d88e38d0c1b8f8->leave($__internal_0d1cc02fc0a682ef61d4c0829913e7088d8bb6404aaf0375a1d88e38d0c1b8f8_prof);
+        $__internal_bc07eec68dd01a552e6155b5e79abf412b8cb4b3d1177b4d9491c52fd120416e->leave($__internal_bc07eec68dd01a552e6155b5e79abf412b8cb4b3d1177b4d9491c52fd120416e_prof);
 
     }
 
-    // line 51
+    // line 49
     public function block_body($context, array $blocks = array())
     {
-        $__internal_16c1fb259faece3ad35e58b3fa1b5a08ea9f1b475acddb93b831a4420ccfb5e0 = $this->env->getExtension("native_profiler");
-        $__internal_16c1fb259faece3ad35e58b3fa1b5a08ea9f1b475acddb93b831a4420ccfb5e0->enter($__internal_16c1fb259faece3ad35e58b3fa1b5a08ea9f1b475acddb93b831a4420ccfb5e0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_c0f0ba181a8c9e030fed8444320b286d20208787f56536124a729a404410c681 = $this->env->getExtension("native_profiler");
+        $__internal_c0f0ba181a8c9e030fed8444320b286d20208787f56536124a729a404410c681->enter($__internal_c0f0ba181a8c9e030fed8444320b286d20208787f56536124a729a404410c681_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 52
+        // line 50
         $context["profile"] = $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "get", array(0 => "profile"), "method");
-        // line 53
+        // line 51
         $context["idFavClubs"] = $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "get", array(0 => "idFavClubs"), "method");
-        // line 54
+        // line 52
         $context["showFavorite"] = true;
-        // line 55
+        // line 53
         echo "\t<div class=\"container rounded-box\">
 \t\t<div class=\"row\">
 \t\t\t<div class=\"col-md-4 col-md-offset-4 club-photo\">
 \t\t\t\t<div id=\"image\">
 \t\t\t\t\t<img id = \"club_avatar\" src=
 \t\t\t\t\t";
-        // line 60
+        // line 58
         if ($this->getAttribute((isset($context["club"]) ? $context["club"] : $this->getContext($context, "club")), "image", array())) {
             echo "\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl(("bundles/web/img/clubs/" . $this->getAttribute((isset($context["club"]) ? $context["club"] : $this->getContext($context, "club")), "image", array()))), "html", null, true);
@@ -161,60 +140,60 @@ class __TwigTemplate_7cd071347684b1af965ee16ae5d84de145c089f41adfd72878aad2eec4e
             echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/web/img/clubs/default.jpg"), "html", null, true);
             echo "\"";
         }
-        // line 61
+        // line 59
         echo "\t\t\t\t\t/>
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>\t
 \t\t<div id=\"dynamic_content\">
 \t\t\t";
-        // line 66
-        $this->loadTemplate("club/templates/showClubInfo.html.twig", "club/viewClub.html.twig", 66)->display(array_merge($context, array("club" => (isset($context["club"]) ? $context["club"] : $this->getContext($context, "club")))));
-        // line 67
+        // line 64
+        $this->loadTemplate("club/templates/showClubInfo.html.twig", "club/viewClub.html.twig", 64)->display(array_merge($context, array("club" => (isset($context["club"]) ? $context["club"] : $this->getContext($context, "club")))));
+        // line 65
         echo "\t\t</div>
 \t\t";
-        // line 68
+        // line 66
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["idFavClubs"]) ? $context["idFavClubs"] : $this->getContext($context, "idFavClubs")));
         foreach ($context['_seq'] as $context["_key"] => $context["idFavClub"]) {
-            // line 69
+            // line 67
             echo "\t\t\t";
             if (($context["idFavClub"] == $this->getAttribute((isset($context["club"]) ? $context["club"] : $this->getContext($context, "club")), "id", array()))) {
-                // line 70
+                // line 68
                 echo "\t\t\t\t<button id=\"unFav\">Unfavorite</button>
 \t\t\t\t";
-                // line 71
+                // line 69
                 $context["showFavorite"] = false;
-                // line 72
+                // line 70
                 echo "\t\t\t";
             }
-            // line 73
+            // line 71
             echo "\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['idFavClub'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 74
+        // line 72
         echo "\t\t";
         if ((isset($context["showFavorite"]) ? $context["showFavorite"] : $this->getContext($context, "showFavorite"))) {
-            // line 75
+            // line 73
             echo "\t\t\t\t<button id=\"fav\">Favorite</button>
 \t\t";
         }
-        // line 77
+        // line 75
         echo "\t\t";
         if (($this->getAttribute((isset($context["club"]) ? $context["club"] : $this->getContext($context, "club")), "owner", array()) == null)) {
-            // line 78
+            // line 76
             echo "\t\t\t<button id=\"owner\">I am the owner</button>
 \t\t";
         }
-        // line 80
+        // line 78
         echo "\t\t<div id=\"hidden-inputs\">
 \t\t</div>
 \t</div>
 ";
         
-        $__internal_16c1fb259faece3ad35e58b3fa1b5a08ea9f1b475acddb93b831a4420ccfb5e0->leave($__internal_16c1fb259faece3ad35e58b3fa1b5a08ea9f1b475acddb93b831a4420ccfb5e0_prof);
+        $__internal_c0f0ba181a8c9e030fed8444320b286d20208787f56536124a729a404410c681->leave($__internal_c0f0ba181a8c9e030fed8444320b286d20208787f56536124a729a404410c681_prof);
 
     }
 
@@ -230,17 +209,15 @@ class __TwigTemplate_7cd071347684b1af965ee16ae5d84de145c089f41adfd72878aad2eec4e
 
     public function getDebugInfo()
     {
-        return array (  212 => 80,  208 => 78,  205 => 77,  201 => 75,  198 => 74,  192 => 73,  189 => 72,  187 => 71,  184 => 70,  181 => 69,  177 => 68,  174 => 67,  172 => 66,  165 => 61,  155 => 60,  148 => 55,  146 => 54,  144 => 53,  142 => 52,  136 => 51,  122 => 44,  113 => 38,  100 => 28,  94 => 25,  76 => 9,  70 => 7,  65 => 6,  58 => 7,  53 => 6,  49 => 5,  44 => 4,  38 => 3,  31 => 1,  29 => 2,  11 => 1,);
+        return array (  191 => 78,  187 => 76,  184 => 75,  180 => 73,  177 => 72,  171 => 71,  168 => 70,  166 => 69,  163 => 68,  160 => 67,  156 => 66,  153 => 65,  151 => 64,  144 => 59,  134 => 58,  127 => 53,  125 => 52,  123 => 51,  121 => 50,  115 => 49,  101 => 42,  92 => 36,  79 => 26,  73 => 23,  53 => 6,  49 => 5,  44 => 4,  38 => 3,  31 => 1,  29 => 2,  11 => 1,);
     }
 }
 /* {% extends 'base/base.html.twig' %}*/
 /* {% set active = 3 %}*/
 /* {% block javascripts %}*/
 /* 	{{ parent() }}*/
-/* 	{% javascripts '@AppBundle/*' output='js/compiled/main.js' %}*/
 /* 	<script src="{{ asset('bundles/web/js/ajax.js') }}" type="text/javascript"></script>*/
 /* 	<script src="{{ asset('bundles/web/js/libs/googleMaps.js') }}" type="text/javascript"></script>*/
-/* {% endjavascripts %}*/
 /* */
 /* */
 /* 	<script>*/

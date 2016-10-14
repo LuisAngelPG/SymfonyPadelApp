@@ -64,10 +64,10 @@ class UserProfileEquipment extends \AppBundle\Entity\UserProfileEquipment implem
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\UserProfileEquipment' . "\0" . 'brand', '' . "\0" . 'AppBundle\\Entity\\UserProfileEquipment' . "\0" . 'image', '' . "\0" . 'AppBundle\\Entity\\UserProfileEquipment' . "\0" . 'created', '' . "\0" . 'AppBundle\\Entity\\UserProfileEquipment' . "\0" . 'updated', '' . "\0" . 'AppBundle\\Entity\\UserProfileEquipment' . "\0" . 'id'];
+            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\UserProfileEquipment' . "\0" . 'brand', '' . "\0" . 'AppBundle\\Entity\\UserProfileEquipment' . "\0" . 'image', '' . "\0" . 'AppBundle\\Entity\\UserProfileEquipment' . "\0" . 'id'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\UserProfileEquipment' . "\0" . 'brand', '' . "\0" . 'AppBundle\\Entity\\UserProfileEquipment' . "\0" . 'image', '' . "\0" . 'AppBundle\\Entity\\UserProfileEquipment' . "\0" . 'created', '' . "\0" . 'AppBundle\\Entity\\UserProfileEquipment' . "\0" . 'updated', '' . "\0" . 'AppBundle\\Entity\\UserProfileEquipment' . "\0" . 'id'];
+        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\UserProfileEquipment' . "\0" . 'brand', '' . "\0" . 'AppBundle\\Entity\\UserProfileEquipment' . "\0" . 'image', '' . "\0" . 'AppBundle\\Entity\\UserProfileEquipment' . "\0" . 'id'];
     }
 
     /**

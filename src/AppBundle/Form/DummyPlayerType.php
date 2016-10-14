@@ -40,7 +40,7 @@ public function buildForm(FormBuilderInterface $builder, array $options) {
 
     public function configureOptions(OptionsResolver $resolver) {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\DummyPlayer',
+            'data_class' => 'AppBundle\Entity\UserProfilePlayerprofile',
         ));
     }
 }

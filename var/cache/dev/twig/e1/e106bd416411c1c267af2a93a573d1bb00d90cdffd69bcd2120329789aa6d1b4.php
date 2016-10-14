@@ -15,8 +15,8 @@ class __TwigTemplate_f5c7111b3e34126840d282f1845b9c4b3b84c131dcaa35b52cc436c0d7c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_4760d6e4cac61ae04c09cd08b24351fdc33fcd60812687a3347b2316059da2ba = $this->env->getExtension("native_profiler");
-        $__internal_4760d6e4cac61ae04c09cd08b24351fdc33fcd60812687a3347b2316059da2ba->enter($__internal_4760d6e4cac61ae04c09cd08b24351fdc33fcd60812687a3347b2316059da2ba_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "tournament/templates/infoTournament.html.twig"));
+        $__internal_1dbb900adf4b219b458b270e7a5d50bdd0e154061dd224470bc401003e465a6c = $this->env->getExtension("native_profiler");
+        $__internal_1dbb900adf4b219b458b270e7a5d50bdd0e154061dd224470bc401003e465a6c->enter($__internal_1dbb900adf4b219b458b270e7a5d50bdd0e154061dd224470bc401003e465a6c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "tournament/templates/infoTournament.html.twig"));
 
         // line 1
         echo "<div class=\"row\">
@@ -146,31 +146,35 @@ class __TwigTemplate_f5c7111b3e34126840d282f1845b9c4b3b84c131dcaa35b52cc436c0d7c
         echo "
 \t</div>
 </div>
+
 ";
-        // line 65
+        // line 66
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["rounds"]) ? $context["rounds"] : $this->getContext($context, "rounds")));
         foreach ($context['_seq'] as $context["_key"] => $context["round"]) {
-            // line 66
+            // line 67
             echo "\tRound: ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["round"], "number", array()), "html", null, true);
             echo " <br>
 \t";
-            // line 67
+            // line 68
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["round"], "matches", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["match"]) {
-                // line 68
+                // line 69
                 echo "\t\tCourt: ";
                 echo twig_escape_filter($this->env, $this->getAttribute($context["match"], "court", array()), "html", null, true);
                 echo "<br>
-\t\tTeam 1: <br>
-\t\t";
+\t\tTeam 1: Score: ";
                 // line 70
+                echo twig_escape_filter($this->env, $this->getAttribute($context["match"], "scoreOne", array()), "html", null, true);
+                echo "<br>
+\t\t";
+                // line 71
                 $context['_parent'] = $context;
                 $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["match"], "teamOne", array()));
                 foreach ($context['_seq'] as $context["_key"] => $context["player"]) {
-                    // line 71
+                    // line 72
                     echo "\t\t\t";
                     echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["player"], "playerProfile", array()), "name", array()), "html", null, true);
                     echo "<br>
@@ -179,14 +183,16 @@ class __TwigTemplate_f5c7111b3e34126840d282f1845b9c4b3b84c131dcaa35b52cc436c0d7c
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['player'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 73
-                echo "\t\tTeam 2: <br>
-\t\t";
                 // line 74
+                echo "\t\tTeam 2: Score: ";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["match"], "scoreTwo", array()), "html", null, true);
+                echo "<br>
+\t\t";
+                // line 75
                 $context['_parent'] = $context;
                 $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["match"], "teamTwo", array()));
                 foreach ($context['_seq'] as $context["_key"] => $context["player"]) {
-                    // line 75
+                    // line 76
                     echo "\t\t\t";
                     echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["player"], "playerProfile", array()), "name", array()), "html", null, true);
                     echo "<br>
@@ -195,13 +201,13 @@ class __TwigTemplate_f5c7111b3e34126840d282f1845b9c4b3b84c131dcaa35b52cc436c0d7c
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['player'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 77
+                // line 78
                 echo "\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['match'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 78
+            // line 79
             echo "\t<br>
 ";
         }
@@ -209,7 +215,7 @@ class __TwigTemplate_f5c7111b3e34126840d282f1845b9c4b3b84c131dcaa35b52cc436c0d7c
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['round'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         
-        $__internal_4760d6e4cac61ae04c09cd08b24351fdc33fcd60812687a3347b2316059da2ba->leave($__internal_4760d6e4cac61ae04c09cd08b24351fdc33fcd60812687a3347b2316059da2ba_prof);
+        $__internal_1dbb900adf4b219b458b270e7a5d50bdd0e154061dd224470bc401003e465a6c->leave($__internal_1dbb900adf4b219b458b270e7a5d50bdd0e154061dd224470bc401003e465a6c_prof);
 
     }
 
@@ -225,7 +231,7 @@ class __TwigTemplate_f5c7111b3e34126840d282f1845b9c4b3b84c131dcaa35b52cc436c0d7c
 
     public function getDebugInfo()
     {
-        return array (  205 => 78,  199 => 77,  190 => 75,  186 => 74,  183 => 73,  174 => 71,  170 => 70,  164 => 68,  160 => 67,  155 => 66,  151 => 65,  145 => 62,  141 => 60,  139 => 59,  131 => 54,  127 => 52,  125 => 51,  117 => 46,  113 => 44,  111 => 43,  105 => 39,  96 => 37,  92 => 36,  88 => 34,  79 => 32,  75 => 31,  70 => 28,  68 => 27,  60 => 22,  56 => 20,  54 => 19,  46 => 14,  42 => 12,  40 => 11,  32 => 6,  28 => 4,  26 => 3,  22 => 1,);
+        return array (  211 => 79,  205 => 78,  196 => 76,  192 => 75,  187 => 74,  178 => 72,  174 => 71,  170 => 70,  165 => 69,  161 => 68,  156 => 67,  152 => 66,  145 => 62,  141 => 60,  139 => 59,  131 => 54,  127 => 52,  125 => 51,  117 => 46,  113 => 44,  111 => 43,  105 => 39,  96 => 37,  92 => 36,  88 => 34,  79 => 32,  75 => 31,  70 => 28,  68 => 27,  60 => 22,  56 => 20,  54 => 19,  46 => 14,  42 => 12,  40 => 11,  32 => 6,  28 => 4,  26 => 3,  22 => 1,);
     }
 }
 /* <div class="row">*/
@@ -292,15 +298,16 @@ class __TwigTemplate_f5c7111b3e34126840d282f1845b9c4b3b84c131dcaa35b52cc436c0d7c
 /* 		{{tournament.localClubName}}*/
 /* 	</div>*/
 /* </div>*/
+/* */
 /* {% for round in rounds %}*/
 /* 	Round: {{round.number}} <br>*/
 /* 	{% for match in round.matches %}*/
 /* 		Court: {{match.court}}<br>*/
-/* 		Team 1: <br>*/
+/* 		Team 1: Score: {{ match.scoreOne }}<br>*/
 /* 		{% for player in match.teamOne %}*/
 /* 			{{ player.playerProfile.name }}<br>*/
 /* 		{% endfor %}*/
-/* 		Team 2: <br>*/
+/* 		Team 2: Score: {{ match.scoreTwo }}<br>*/
 /* 		{% for player in match.teamTwo %}*/
 /* 			{{ player.playerProfile.name }}<br>*/
 /* 		{% endfor %}*/

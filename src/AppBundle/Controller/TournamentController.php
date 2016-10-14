@@ -29,10 +29,10 @@ class TournamentController extends Controller {
 	    $profile = $session->get('profile');
 	    $repositoryClubs = $this->getDoctrine()->getRepository('AppBundle:TournamentClub');
 	    $repositoryPlayers = $this->getDoctrine()->getRepository('AppBundle:UserProfilePlayerprofile');
-        $repositoryDummys = $this->getDoctrine()->getRepository('AppBundle:DummyPlayer');
+       // $repositoryDummys = $this->getDoctrine()->getRepository('AppBundle:DummyPlayer');
         $favClubs = $repositoryClubs->findById($idFavClubs);
         $friends = $repositoryPlayers->findById($idFriends);
-        $dummys = $repositoryDummys->findByCreator($profile);
+        $dummys = $repositoryPlayers->findByCreator($profile);
         $profile = $repositoryPlayers->find($profile->getId());
         $form = $this->createForm(TournamentType::class, $tournament, 
             array('favClubs' => $favClubs, 'friends' => $friends, 'dummys' => $dummys, 'test' => $profile)); 
@@ -65,7 +65,7 @@ class TournamentController extends Controller {
                     $playerParticipant = new TournamentPlayerparticipant();
                     $playerParticipant->setPlayer($player["player"]);
                 } else {
-                    $playerParticipant = new TournamentDummyparticipant();
+                    $playerParticipant = new TournamentPlayerparticipant();
                     $playerParticipant->setPlayer($player["player"]);
                 }
         		$playerParticipant->setStatus("pending");
@@ -94,16 +94,63 @@ class TournamentController extends Controller {
                 );
 
             $matchups = array();
-            $playersCourts = $tournament->getAmountPlayers() . "/" . $tournament->getAmountCourts();
+            $numPlayers = $tournament->getAmountPlayers();
+            $playersCourts = $numPlayers . "/" . $tournament->getAmountCourts();
             $rounds = $roundsReference[$playersCourts];
-
-            // for rounds
-            for ($i=0; $i<$rounds; $i++) {    
+            if ($numPlayers == "5") {
+               $in = array (
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                ); 
+            } else {
+                $in = array (
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                );
+            }
+            $shift = false;
+            // for rounds            
+            for ($i=0; $i<$rounds; $i++) {  
+                        $out = array();
+ 
                 $round = new TournamentRound();
                 $round->setNumber($i+1);
                 $round->setTournament($tournament);
-                $em->persist($round);
                 $paired = array();
+                if ($numPlayers == "5") {
+                    if ($shift) {
+                        $n = array_shift($in);
+                        $shift = false;
+                    } else {
+                        $n = array_pop($in);
+                        $shift = true;
+                    }
+                    $out[$n] = true;
+                }
+
+                if ($numPlayers == "6") {
+                    if ($shift) {
+                        $n = array_shift($in);
+                        $m = array_shift($in);
+                        $shift = false;
+                    } else {
+                        $n = array_pop($in);
+                        $m = array_pop($in);
+                        $shift = true;
+                    }
+                    $out[$n] = true;
+                    $out[$m] = true;
+                                    dump($out);
+
+                }
+                $em->persist($round);
                 // for courts
                 for ($x=0; $x<$courts; $x++) {
                     $match = new TournamentMatch();
@@ -126,7 +173,8 @@ class TournamentController extends Controller {
                     foreach ($playersParticipants as $keyOne => $valueOne) {
                         //for 2nd player of team
                         foreach ($playersParticipants as $keyTwo => $valueTwo) {
-                            if (!array_key_exists($keyOne, $paired) && !array_key_exists($keyTwo, $paired)) {
+                            if (!array_key_exists($keyOne, $paired) && !array_key_exists($keyTwo, $paired) && 
+                                !array_key_exists($keyOne, $out) && !array_key_exists($keyTwo, $out)) {
                                 if ($keyOne != $keyTwo) {
                                     $keyMatchOne = $keyOne . "-" . $keyTwo;
                                     $keyMatchTwo = $keyTwo . "-" . $keyOne;
@@ -147,7 +195,8 @@ class TournamentController extends Controller {
                                             $em->persist($teamTwoOne);
                                             $em->persist($teamTwoTwo);
                                         }
-                                        if (sizeOf($paired) == 4) {
+                                        $playersPaired = sizeOf($paired);
+                                        if ($playersPaired == 4 || $playersPaired == 5 || $playersPaired == 8 || $playersPaired == 12 || $playersPaired == 16) {
                                             $finshAssignment = true;
                                         }
                                         break;
@@ -174,15 +223,15 @@ class TournamentController extends Controller {
         $repositoryRounds = $this->getDoctrine()->getRepository('AppBundle:TournamentRound');
         $repositoryMatches = $this->getDoctrine()->getRepository('AppBundle:TournamentMatch'); 
         $repositoryTeamOne= $this->getDoctrine()->getRepository('AppBundle:TournamentMatchPartnerOne'); 
-        $repositoryTeamTwo = $this->getDoctrine()->getRepository('AppBundle:TournamentMatchPartnerOne'); 
+        $repositoryTeamTwo = $this->getDoctrine()->getRepository('AppBundle:TournamentMatchPartnerTwo'); 
         $repositoryParticipant = $this->getDoctrine()->getRepository('AppBundle:TournamentPlayerparticipant');
-        $repositoryParticipantDummys = $this->getDoctrine()->getRepository('AppBundle:TournamentDummyparticipant');
+        //$repositoryParticipantDummys = $this->getDoctrine()->getRepository('AppBundle:TournamentDummyparticipant');
         $repositoryPlayer = $this->getDoctrine()->getRepository('AppBundle:UserProfilePlayerprofile');
-        $repositoryDummys = $this->getDoctrine()->getRepository('AppBundle:DummyPlayer');
+  //      $repositoryDummys = $this->getDoctrine()->getRepository('AppBundle:DummyPlayer');
 
         $tournament = $repositoryTournament->findOneById($tournamentId);
         $playersId = $repositoryParticipant->findByTournament($tournament);
-        $dummysId = $repositoryParticipantDummys->findByTournament($tournament);
+        $dummysId = $repositoryParticipant->findByTournament($tournament);
         $players = array();
         $dummys = array();
         if ($playersId != null) {
@@ -192,7 +241,7 @@ class TournamentController extends Controller {
         }
         if ($dummysId != null) {
             foreach ($dummysId as $player) {
-            array_push($dummys, $repositoryDummys->findOneById(($player->getPlayer()->getId())));
+            array_push($dummys, $repositoryPlayer->findOneById(($player->getPlayer()->getId())));
             }    
         }
         $rounds = $repositoryRounds->findByTournament($tournament);
@@ -200,12 +249,11 @@ class TournamentController extends Controller {
             $round->matches = $repositoryMatches->findByRound($round);
             $i = 0;
             foreach ($round->matches as $match) {
-                $round->matches[$i]->teamOne = $repositoryTeamOne->findByMatch($round->matches);
-                $round->matches[$i]->teamTwo = $repositoryTeamTwo->findByMatch($round->matches);  
+                $round->matches[$i]->teamOne = $repositoryTeamOne->findByMatch($match);
+                $round->matches[$i]->teamTwo = $repositoryTeamTwo->findByMatch($match);  
                 $i++;
             }
         }
-
         return $this->render('tournament/viewTournament.html.twig', array('tournament' => $tournament, 'players' => $players, 'dummys' => $dummys, 'rounds' => $rounds));
     }
 
@@ -221,12 +269,9 @@ class TournamentController extends Controller {
         $profile = $this->get('session')->get('profile');
         $repositoryPlayer = $this->getDoctrine()->getRepository('AppBundle:TournamentPlayerparticipant');
         $repositorySpectator = $this->getDoctrine()->getRepository('AppBundle:TournamentSpectatorparticipant');
-      //  $playerIdTournaments = $this->get('session')->get('playerIdTournaments');
-      //  $spectatorIdTournaments = $this->get('session')->get('spectatorIdTournaments');
         $tournamentsPlayer = $repositoryPlayer->findByPlayer($profile->getId());
         $tournamentSpectator = $repositorySpectator->findByPlayer($profile->getId());
         $tournaments = array($tournamentsPlayer, $tournamentSpectator);
-       // dump($tournaments, $tournamentsPlayer, $tournamentSpectator, $profile->getId());die();
         return $tournaments;
     }
 }

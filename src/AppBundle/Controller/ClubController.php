@@ -91,7 +91,6 @@ class ClubController extends Controller {
         $club = $repository->findOneById($clubId);
         $form = $this->createForm(ClubType::class, $club);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $this->addClub($club, $form);
             return $this->render('club/viewClub.html.twig',  array('club' => $club));

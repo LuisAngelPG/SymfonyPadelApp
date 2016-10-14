@@ -65,6 +65,11 @@ class UserProfilePlayerprofile extends Player
      * @ORM\Column(name="is_dummy", type="boolean", nullable=false)
      */
     private $isDummy;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="UserProfilePlayerprofile")
+     */
+    private $creator;
 /*
     /**
      * @var \DateTime
@@ -540,5 +545,29 @@ class UserProfilePlayerprofile extends Player
     public function getMyFriends()
     {
         return $this->myFriends;
+    }
+
+    /**
+     * Set creator
+     *
+     * @param \AppBundle\Entity\UserProfilePlayerprofile $creator
+     *
+     * @return UserProfilePlayerprofile
+     */
+    public function setCreator(\AppBundle\Entity\UserProfilePlayerprofile $creator = null)
+    {
+        $this->creator = $creator;
+
+        return $this;
+    }
+
+    /**
+     * Get creator
+     *
+     * @return \AppBundle\Entity\UserProfilePlayerprofile
+     */
+    public function getCreator()
+    {
+        return $this->creator;
     }
 }
