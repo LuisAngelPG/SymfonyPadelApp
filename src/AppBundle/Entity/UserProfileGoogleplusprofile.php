@@ -32,21 +32,21 @@ class UserProfileGoogleplusprofile
      * @ORM\Column(name="name", type="string", length=250, nullable=false)
      */
     private $name;
-/*
+
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="created", type="datetimetz", nullable=false)
-     
+     */
     private $created;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="updated", type="datetimetz", nullable=false)
-     
+     */
     private $updated;
-*/
+
     /**
      * @var integer
      *
