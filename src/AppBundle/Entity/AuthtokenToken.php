@@ -12,13 +12,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class AuthtokenToken
 {
-    /**
+    /*/**
      * @var \DateTime
      *
      * @ORM\Column(name="created", type="datetimetz", nullable=true)
-     */
+     
     private $created;
-
+*/
     /**
      * @var string
      *

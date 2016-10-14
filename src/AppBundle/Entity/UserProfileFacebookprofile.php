@@ -46,21 +46,21 @@ class UserProfileFacebookprofile
      * @ORM\Column(name="access_token", type="text", nullable=true)
      */
     private $accessToken;
-
+/*
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="created", type="datetimetz", nullable=false)
-     */
+     
     private $created;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="updated", type="datetimetz", nullable=false)
-     */
+     
     private $updated;
-
+*/
     /**
      * @var integer
      *

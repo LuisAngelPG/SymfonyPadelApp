@@ -25,21 +25,21 @@ class UserProfileEquipment
      * @ORM\Column(name="image", type="string", length=100, nullable=true)
      */
     private $image;
-
+/*
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="created", type="datetimetz", nullable=false)
-     */
+     
     private $created;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="updated", type="datetimetz", nullable=false)
-     */
+     
     private $updated;
-
+*/
     /**
      * @var integer
      *
